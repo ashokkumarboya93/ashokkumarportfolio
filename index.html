@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASHOK | Java Full Stack Developer & AI/ML Engineer</title>
+    <meta name="description"
+        content="Portfolio of Boya Ashok Kumar - Java Full Stack Developer, Software Engineer, and AI/ML Engineer. Building scalable software and intelligent solutions.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+        <div class="shape shape-5"></div>
+    </div>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-mark">ASHOK</span>
+
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <a href="#contact" class="btn btn-primary nav-btn">Get in Touch</a>
+            <!-- Mobile menu toggle -->
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        Open to Work
+                    </div>
+                    <h1 class="hero-title">
+                        Crafting Intelligent
+                        <span class="gradient-text">Software </span>
+                    </h1>
+                    <p class="hero-description">
+                        Aspiring Software Engineer specializing in
+                        <span class="highlight">full-stack development</span>,
+                        <span class="highlight">AI/ML pipelines</span>, and
+                        <span class="highlight">cloud architecture</span> — turning complex ideas into elegant,
+                        data-driven products.
+                    </p>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-value" data-count="8.0">8.0</div>
+                            <div class="stat-label">CGPA</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <div class="stat-value">6+</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <div class="stat-value">3</div>
+                            <div class="stat-label">Internships</div>
+                        </div>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary btn-lg">
+                            <span>Explore My Work</span>
+                            <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="./Assets/Ashok_TAP_Resume.pdf" download class="btn btn-secondary btn-lg">
+                            <span>Resume</span>
+                            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="visual-container">
+                        <!-- Profile Photo -->
+                        <div class="profile-photo-wrap">
+                            <img src="./Assets/Ashok_Photo-removebg-preview (1).png" alt="Ashok Kumar"
+                                class="profile-photo">
+                        </div>
+                        <!-- Floating tech cards with Lucide icons -->
+                        <div class="floating-card card-1">
+                            <div class="card-icon"><i data-lucide="cloud" class="lucide-icon"></i></div>
+                            <div class="card-text">Cloud</div>
+                        </div>
+                        <div class="floating-card card-2">
+                            <div class="card-icon"><i data-lucide="brain" class="lucide-icon"></i></div>
+                            <div class="card-text">AI/ML</div>
+                        </div>
+                        <div class="floating-card card-3">
+                            <div class="card-icon"><i data-lucide="monitor" class="lucide-icon"></i></div>
+                            <div class="card-text">Full Stack</div>
+                        </div>
+                        <div class="floating-card card-4">
+                            <div class="card-icon"><i data-lucide="bar-chart-3" class="lucide-icon"></i></div>
+                            <div class="card-text">Data</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me <span class="title-accent">– Who I Am</span></h2>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">
+                        I am <strong>BOYA ASHOK KUMAR</strong>, a B.Tech CSE-AI student at St. Johns College of
+                        Engineering & Technology with a CGPA of <span class="highlight">8.0/10</span>. I build
+                        scalable backend systems, AI/ML models, and cloud solutions using Java, Python, and AWS.
+                    </p>
+                    <p>
+                        My expertise spans full-stack development, machine learning pipelines, data analytics, and
+                        cloud engineering with tools like Flask, Streamlit, MySQL, and AWS services.
+                    </p>
+                    <p class="about-cta">
+                        Actively seeking roles in <strong>Software Engineering</strong>, <strong>Java Full Stack
+                            Development</strong>, <strong>AI/ML</strong>, and <strong>Cloud Engineering</strong>.
+                    </p>
+                </div>
+
+                <div class="education-cards">
+                    <div class="edu-card">
+                        <div class="edu-icon"><i data-lucide="graduation-cap" class="lucide-icon lg"></i></div>
+                        <h3 class="edu-title">St. Johns College of Engineering &amp; Technology</h3>
+                        <p class="edu-degree">B.Tech in Computer Science &amp; Artificial Intelligence</p>
+                        <p class="edu-duration">Sep 2022 – May 2026</p>
+                        <p class="edu-grade">CGPA: <span class="grade-highlight">8.0/10</span></p>
+                        <div class="edu-details">
+                            <p class="course-label">Relevant Coursework:</p>
+                            <div class="course-tags">
+                                <span class="course-tag">Data Structures &amp; Algorithms</span>
+                                <span class="course-tag">Operating Systems</span>
+                                <span class="course-tag">Artificial Intelligence</span>
+                                <span class="course-tag">Machine Learning</span>
+                                <span class="course-tag">Deep Learning</span>
+                                <span class="course-tag">DBMS</span>
+                                <span class="course-tag">Computer Networks</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="edu-card">
+                        <div class="edu-icon"><i data-lucide="book-open" class="lucide-icon lg"></i></div>
+                        <h3 class="edu-title">Deeksha Junior College, Yemmiganur</h3>
+                        <p class="edu-degree">MPC – Intermediate Course</p>
+                        <p class="edu-duration">Aug 2020 – Sep 2022</p>
+                        <p class="edu-grade">CGPA: <span class="grade-highlight">7.78/10</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SKILLS SECTION - Train Animation ========== -->
+    <section id="skills" class="section skills-section">
+        <!-- Rain Effect -->
+        <div class="skills-rain" id="skillsRain"></div>
+
+        <div class="container">
+            <div class="section-header centered">
+                <h2 class="section-title">Skills & <span class="gradient-text">Technologies</span></h2>
+                <p class="section-subtitle">My tech stack — always moving, always growing</p>
+            </div>
+        </div>
+
+        <!-- Train Tracks -->
+        <div class="train-tracks">
+            <!-- Track 1 — Languages & Core -->
+            <div class="train-track track-speed-1">
+                <div class="train-bogies">
+                    <div class="bogie"><i data-lucide="coffee" class="bogie-icon"></i><span>Java</span></div>
+                    <div class="bogie"><i data-lucide="terminal" class="bogie-icon"></i><span>Python</span></div>
+                    <div class="bogie"><i data-lucide="file-code" class="bogie-icon"></i><span>HTML/CSS</span></div>
+                    <div class="bogie"><i data-lucide="braces" class="bogie-icon"></i><span>JavaScript</span></div>
+                    <div class="bogie"><i data-lucide="database" class="bogie-icon"></i><span>SQL</span></div>
+                    <div class="bogie"><i data-lucide="code-2" class="bogie-icon"></i><span>C / C++</span></div>
+                    <div class="bogie"><i data-lucide="hash" class="bogie-icon"></i><span>PHP</span></div>
+                </div>
+                <div class="train-bogies" aria-hidden="true">
+                    <div class="bogie"><i data-lucide="coffee" class="bogie-icon"></i><span>Java</span></div>
+                    <div class="bogie"><i data-lucide="terminal" class="bogie-icon"></i><span>Python</span></div>
+                    <div class="bogie"><i data-lucide="file-code" class="bogie-icon"></i><span>HTML/CSS</span></div>
+                    <div class="bogie"><i data-lucide="braces" class="bogie-icon"></i><span>JavaScript</span></div>
+                    <div class="bogie"><i data-lucide="database" class="bogie-icon"></i><span>SQL</span></div>
+                    <div class="bogie"><i data-lucide="code-2" class="bogie-icon"></i><span>C / C++</span></div>
+                    <div class="bogie"><i data-lucide="hash" class="bogie-icon"></i><span>PHP</span></div>
+                </div>
+            </div>
+
+            <!-- Track 2 — AI / ML (reverse direction) -->
+            <div class="train-track track-speed-2 track-reverse">
+                <div class="train-bogies">
+                    <div class="bogie accent-purple"><i data-lucide="brain"
+                            class="bogie-icon"></i><span>TensorFlow</span></div>
+                    <div class="bogie accent-purple"><i data-lucide="flame" class="bogie-icon"></i><span>PyTorch</span>
+                    </div>
+                    <div class="bogie accent-purple"><i data-lucide="target"
+                            class="bogie-icon"></i><span>Scikit-learn</span></div>
+                    <div class="bogie accent-purple"><i data-lucide="layers" class="bogie-icon"></i><span>Keras</span>
+                    </div>
+                    <div class="bogie accent-purple"><i data-lucide="eye" class="bogie-icon"></i><span>OpenCV</span>
+                    </div>
+                    <div class="bogie accent-purple"><i data-lucide="bar-chart-2" class="bogie-icon"></i><span>Data
+                            Analysis</span></div>
+                    <div class="bogie accent-purple"><i data-lucide="settings" class="bogie-icon"></i><span>Feature
+                            Eng.</span></div>
+                </div>
+                <div class="train-bogies" aria-hidden="true">
+                    <div class="bogie accent-purple"><i data-lucide="brain"
+                            class="bogie-icon"></i><span>TensorFlow</span></div>
+                    <div class="bogie accent-purple"><i data-lucide="flame" class="bogie-icon"></i><span>PyTorch</span>
+                    </div>
+                    <div class="bogie accent-purple"><i data-lucide="target"
+                            class="bogie-icon"></i><span>Scikit-learn</span></div>
+                    <div class="bogie accent-purple"><i data-lucide="layers" class="bogie-icon"></i><span>Keras</span>
+                    </div>
+                    <div class="bogie accent-purple"><i data-lucide="eye" class="bogie-icon"></i><span>OpenCV</span>
+                    </div>
+                    <div class="bogie accent-purple"><i data-lucide="bar-chart-2" class="bogie-icon"></i><span>Data
+                            Analysis</span></div>
+                    <div class="bogie accent-purple"><i data-lucide="settings" class="bogie-icon"></i><span>Feature
+                            Eng.</span></div>
+                </div>
+            </div>
+
+            <!-- Track 3 — Cloud & DevOps -->
+            <div class="train-track track-speed-3">
+                <div class="train-bogies">
+                    <div class="bogie accent-teal"><i data-lucide="cloud" class="bogie-icon"></i><span>AWS EC2</span>
+                    </div>
+                    <div class="bogie accent-teal"><i data-lucide="network" class="bogie-icon"></i><span>AWS VPC</span>
+                    </div>
+                    <div class="bogie accent-teal"><i data-lucide="hard-drive" class="bogie-icon"></i><span>S3</span>
+                    </div>
+                    <div class="bogie accent-teal"><i data-lucide="shield" class="bogie-icon"></i><span>IAM</span></div>
+                    <div class="bogie accent-teal"><i data-lucide="activity"
+                            class="bogie-icon"></i><span>CloudWatch</span></div>
+                    <div class="bogie accent-teal"><i data-lucide="git-merge"
+                            class="bogie-icon"></i><span>Git/GitHub</span></div>
+                    <div class="bogie accent-teal"><i data-lucide="rocket" class="bogie-icon"></i><span>CI/CD</span>
+                    </div>
+                </div>
+                <div class="train-bogies" aria-hidden="true">
+                    <div class="bogie accent-teal"><i data-lucide="cloud" class="bogie-icon"></i><span>AWS EC2</span>
+                    </div>
+                    <div class="bogie accent-teal"><i data-lucide="network" class="bogie-icon"></i><span>AWS VPC</span>
+                    </div>
+                    <div class="bogie accent-teal"><i data-lucide="hard-drive" class="bogie-icon"></i><span>S3</span>
+                    </div>
+                    <div class="bogie accent-teal"><i data-lucide="shield" class="bogie-icon"></i><span>IAM</span></div>
+                    <div class="bogie accent-teal"><i data-lucide="activity"
+                            class="bogie-icon"></i><span>CloudWatch</span></div>
+                    <div class="bogie accent-teal"><i data-lucide="git-merge"
+                            class="bogie-icon"></i><span>Git/GitHub</span></div>
+                    <div class="bogie accent-teal"><i data-lucide="rocket" class="bogie-icon"></i><span>CI/CD</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Track 4 — Tools & Frameworks (reverse) -->
+            <div class="train-track track-speed-4 track-reverse">
+                <div class="train-bogies">
+                    <div class="bogie accent-orange"><i data-lucide="flask-conical"
+                            class="bogie-icon"></i><span>Flask</span></div>
+                    <div class="bogie accent-orange"><i data-lucide="layout"
+                            class="bogie-icon"></i><span>Streamlit</span></div>
+                    <div class="bogie accent-orange"><i data-lucide="notebook"
+                            class="bogie-icon"></i><span>Jupyter</span></div>
+                    <div class="bogie accent-orange"><i data-lucide="code" class="bogie-icon"></i><span>VS Code</span>
+                    </div>
+                    <div class="bogie accent-orange"><i data-lucide="database" class="bogie-icon"></i><span>MySQL</span>
+                    </div>
+                    <div class="bogie accent-orange"><i data-lucide="pie-chart"
+                            class="bogie-icon"></i><span>Plotly</span></div>
+                    <div class="bogie accent-orange"><i data-lucide="monitor"
+                            class="bogie-icon"></i><span>Eclipse</span></div>
+                </div>
+                <div class="train-bogies" aria-hidden="true">
+                    <div class="bogie accent-orange"><i data-lucide="flask-conical"
+                            class="bogie-icon"></i><span>Flask</span></div>
+                    <div class="bogie accent-orange"><i data-lucide="layout"
+                            class="bogie-icon"></i><span>Streamlit</span></div>
+                    <div class="bogie accent-orange"><i data-lucide="notebook"
+                            class="bogie-icon"></i><span>Jupyter</span></div>
+                    <div class="bogie accent-orange"><i data-lucide="code" class="bogie-icon"></i><span>VS Code</span>
+                    </div>
+                    <div class="bogie accent-orange"><i data-lucide="database" class="bogie-icon"></i><span>MySQL</span>
+                    </div>
+                    <div class="bogie accent-orange"><i data-lucide="pie-chart"
+                            class="bogie-icon"></i><span>Plotly</span></div>
+                    <div class="bogie accent-orange"><i data-lucide="monitor"
+                            class="bogie-icon"></i><span>Eclipse</span></div>
+                </div>
+            </div>
+
+            <!-- Track 5 — Soft Skills -->
+            <div class="train-track track-speed-5">
+                <div class="train-bogies">
+                    <div class="bogie accent-pink"><i data-lucide="puzzle" class="bogie-icon"></i><span>Problem
+                            Solving</span></div>
+                    <div class="bogie accent-pink"><i data-lucide="scan" class="bogie-icon"></i><span>Analytical
+                            Thinking</span></div>
+                    <div class="bogie accent-pink"><i data-lucide="users" class="bogie-icon"></i><span>Teamwork</span>
+                    </div>
+                    <div class="bogie accent-pink"><i data-lucide="message-circle"
+                            class="bogie-icon"></i><span>Communication</span></div>
+                    <div class="bogie accent-pink"><i data-lucide="search" class="bogie-icon"></i><span>Research</span>
+                    </div>
+                    <div class="bogie accent-pink"><i data-lucide="refresh-cw"
+                            class="bogie-icon"></i><span>Adaptability</span></div>
+                </div>
+                <div class="train-bogies" aria-hidden="true">
+                    <div class="bogie accent-pink"><i data-lucide="puzzle" class="bogie-icon"></i><span>Problem
+                            Solving</span></div>
+                    <div class="bogie accent-pink"><i data-lucide="scan" class="bogie-icon"></i><span>Analytical
+                            Thinking</span></div>
+                    <div class="bogie accent-pink"><i data-lucide="users" class="bogie-icon"></i><span>Teamwork</span>
+                    </div>
+                    <div class="bogie accent-pink"><i data-lucide="message-circle"
+                            class="bogie-icon"></i><span>Communication</span></div>
+                    <div class="bogie accent-pink"><i data-lucide="search" class="bogie-icon"></i><span>Research</span>
+                    </div>
+                    <div class="bogie accent-pink"><i data-lucide="refresh-cw"
+                            class="bogie-icon"></i><span>Adaptability</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROJECTS SECTION ========== -->
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <div class="section-header centered">
+                <div class="projects-header-row">
+                    <!-- Toggle Switch - Top Left -->
+                    <div class="mode-toggle-wrap" id="modeToggleWrap">
+                        <span class="mode-label mode-label-normal active-label">⬜ Normal</span>
+                        <button class="mode-toggle-btn" id="modeToggleBtn" aria-label="Toggle view mode">
+                            <span class="toggle-thumb"></span>
+                        </button>
+                        <span class="mode-label mode-label-animated">🎬 Animated</span>
+                    </div>
+                </div>
+                <h2 class="section-title toon-title">Featured <span class="gradient-text">Projects</span></h2>
+            </div>
+
+            <!-- ===== NORMAL MODE: Grid Layout ===== -->
+            <div class="projects-grid active-mode" id="projectsGrid">
+                <div class="project-card toon-card">
+                    <div class="project-img-wrap">
+                        <div class="project-img-placeholder">
+                            <i data-lucide="users" class="proj-icon"></i>
+                            <div class="proj-img-deco deco-web"></div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-badge toon-badge">Web Development</div>
+                        <h3 class="project-title">Student Attendance Management System</h3>
+                        <p class="project-description">Full-stack attendance platform with secure login, real-time
+                            updates, and dashboard analytics.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PHP</span><span class="tech-tag">HTML</span><span
+                                class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span
+                                class="tech-tag">MySQL</span>
+                        </div>
+                        <a href="https://github.com/ashokkumarboya93" target="_blank"
+                            class="project-link toon-btn-sm"><i data-lucide="github" class="link-icon"></i> GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card toon-card">
+                    <div class="project-img-wrap">
+                        <div class="project-img-placeholder cloud-bg">
+                            <i data-lucide="cloud" class="proj-icon"></i>
+                            <div class="proj-img-deco deco-cloud"></div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-badge cloud-badge toon-badge">Cloud</div>
+                        <h3 class="project-title">AWS File Storage &amp; Sharing System</h3>
+                        <p class="project-description">Secure cloud-based file sharing with pre-signed URL access and
+                            scalable multi-user architecture.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AWS EC2</span><span class="tech-tag">VPC</span><span
+                                class="tech-tag">S3</span><span class="tech-tag">CloudWatch</span>
+                        </div>
+                        <a href="https://github.com/ashokkumarboya93" target="_blank"
+                            class="project-link toon-btn-sm"><i data-lucide="github" class="link-icon"></i> GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card toon-card featured">
+                    <div class="project-img-wrap">
+                        <div class="project-img-placeholder ai-bg">
+                            <i data-lucide="scan-eye" class="proj-icon"></i>
+                            <div class="proj-img-deco deco-ai"></div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-badge ai-badge toon-badge">AI/ML</div>
+                        <h3 class="project-title">Deep-Vision Crowd Monitoring System</h3>
+                        <p class="project-description">Real-time computer vision at 15–20 FPS with deep-learning crowd
+                            analysis, reducing manual monitoring by 60%.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PyTorch</span><span class="tech-tag">OpenCV</span><span
+                                class="tech-tag">Flask</span><span class="tech-tag">Streamlit</span>
+                        </div>
+                        <a href="https://github.com/ashokkumarboya93" target="_blank"
+                            class="project-link toon-btn-sm"><i data-lucide="github" class="link-icon"></i> GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card toon-card">
+                    <div class="project-img-wrap">
+                        <div class="project-img-placeholder ai-bg">
+                            <i data-lucide="file-search" class="proj-icon"></i>
+                            <div class="proj-img-deco deco-research"></div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-badge ai-badge toon-badge">AI/ML</div>
+                        <h3 class="project-title">Ultra Research AI</h3>
+                        <p class="project-description">AI research automation tool generating structured reports from
+                            PDFs, text, and images via OCR pipelines.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Gemini API</span><span class="tech-tag">Python</span><span
+                                class="tech-tag">Streamlit</span><span class="tech-tag">OCR</span>
+                        </div>
+                        <a href="https://github.com/ashokkumarboya93" target="_blank"
+                            class="project-link toon-btn-sm"><i data-lucide="github" class="link-icon"></i> GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card toon-card">
+                    <div class="project-img-wrap">
+                        <div class="project-img-placeholder">
+                            <i data-lucide="trending-up" class="proj-icon"></i>
+                            <div class="proj-img-deco deco-ml"></div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-badge toon-badge">ML</div>
+                        <h3 class="project-title">Employee Salary Prediction</h3>
+                        <p class="project-description">End-to-end ML pipeline with feature engineering and regression
+                            modeling for accurate salary prediction.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span><span class="tech-tag">Scikit-learn</span>
+                        </div>
+                        <a href="https://github.com/ashokkumarboya93" target="_blank"
+                            class="project-link toon-btn-sm"><i data-lucide="github" class="link-icon"></i> GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card toon-card">
+                    <div class="project-img-wrap">
+                        <div class="project-img-placeholder data-bg">
+                            <i data-lucide="pie-chart" class="proj-icon"></i>
+                            <div class="proj-img-deco deco-data"></div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-badge data-badge toon-badge">Data Analytics</div>
+                        <h3 class="project-title">Global Food Production Trends</h3>
+                        <p class="project-description">Analyzed production data (1961–2023) with interactive dashboards
+                            highlighting regional trends.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Power BI</span><span class="tech-tag">Data Analytics</span><span
+                                class="tech-tag">Visualization</span>
+                        </div>
+                        <a href="https://github.com/ashokkumarboya93" target="_blank"
+                            class="project-link toon-btn-sm"><i data-lucide="github" class="link-icon"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== ANIMATED MODE: Netflix-Style Carousel ===== -->
+            <div class="projects-netflix" id="projectsNetflix">
+                <button class="netflix-nav netflix-prev" id="netflixPrev" aria-label="Previous">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                        stroke-linecap="round">
+                        <path d="M15 18l-6-6 6-6" />
+                    </svg>
+                </button>
+                <div class="netflix-track" id="netflixTrack">
+                    <div class="netflix-card toon-card" data-index="0">
+                        <div class="project-img-wrap">
+                            <div class="project-img-placeholder"><i data-lucide="users" class="proj-icon"></i>
+                                <div class="proj-img-deco deco-web"></div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-badge toon-badge">Web Development</div>
+                            <h3 class="project-title">Student Attendance Management System</h3>
+                            <p class="project-description">Full-stack attendance platform with secure login, real-time
+                                updates, and dashboard analytics.</p>
+                            <div class="project-tech"><span class="tech-tag">PHP</span><span
+                                    class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span
+                                    class="tech-tag">JavaScript</span><span class="tech-tag">MySQL</span></div>
+                            <a href="https://github.com/ashokkumarboya93" target="_blank"
+                                class="project-link toon-btn-sm"><i data-lucide="github" class="link-icon"></i>
+                                GitHub</a>
+                        </div>
+                    </div>
+                    <div class="netflix-card toon-card" data-index="1">
+                        <div class="project-img-wrap">
+                            <div class="project-img-placeholder cloud-bg"><i data-lucide="cloud" class="proj-icon"></i>
+                                <div class="proj-img-deco deco-cloud"></div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-badge cloud-badge toon-badge">Cloud</div>
+                            <h3 class="project-title">AWS File Storage &amp; Sharing System</h3>
+                            <p class="project-description">Secure cloud-based file sharing with pre-signed URL access
+                                and scalable multi-user architecture.</p>
+                            <div class="project-tech"><span class="tech-tag">AWS EC2</span><span
+                                    class="tech-tag">VPC</span><span class="tech-tag">S3</span><span
+                                    class="tech-tag">CloudWatch</span></div>
+                            <a href="https://github.com/ashokkumarboya93" target="_blank"
+                                class="project-link toon-btn-sm"><i data-lucide="github" class="link-icon"></i>
+                                GitHub</a>
+                        </div>
+                    </div>
+                    <div class="netflix-card toon-card" data-index="2">
+                        <div class="project-img-wrap">
+                            <div class="project-img-placeholder ai-bg"><i data-lucide="scan-eye" class="proj-icon"></i>
+                                <div class="proj-img-deco deco-ai"></div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-badge ai-badge toon-badge">AI/ML</div>
+                            <h3 class="project-title">Deep-Vision Crowd Monitoring System</h3>
+                            <p class="project-description">Real-time computer vision at 15–20 FPS with deep-learning
+                                crowd analysis, reducing manual monitoring by 60%.</p>
+                            <div class="project-tech"><span class="tech-tag">PyTorch</span><span
+                                    class="tech-tag">OpenCV</span><span class="tech-tag">Flask</span><span
+                                    class="tech-tag">Streamlit</span></div>
+                            <a href="https://github.com/ashokkumarboya93" target="_blank"
+                                class="project-link toon-btn-sm"><i data-lucide="github" class="link-icon"></i>
+                                GitHub</a>
+                        </div>
+                    </div>
+                    <div class="netflix-card toon-card" data-index="3">
+                        <div class="project-img-wrap">
+                            <div class="project-img-placeholder ai-bg"><i data-lucide="file-search"
+                                    class="proj-icon"></i>
+                                <div class="proj-img-deco deco-research"></div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-badge ai-badge toon-badge">AI/ML</div>
+                            <h3 class="project-title">Ultra Research AI</h3>
+                            <p class="project-description">AI research automation tool generating structured reports
+                                from PDFs, text, and images via OCR pipelines.</p>
+                            <div class="project-tech"><span class="tech-tag">Gemini API</span><span
+                                    class="tech-tag">Python</span><span class="tech-tag">Streamlit</span><span
+                                    class="tech-tag">OCR</span></div>
+                            <a href="https://github.com/ashokkumarboya93" target="_blank"
+                                class="project-link toon-btn-sm"><i data-lucide="github" class="link-icon"></i>
+                                GitHub</a>
+                        </div>
+                    </div>
+                    <div class="netflix-card toon-card" data-index="4">
+                        <div class="project-img-wrap">
+                            <div class="project-img-placeholder"><i data-lucide="trending-up" class="proj-icon"></i>
+                                <div class="proj-img-deco deco-ml"></div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-badge toon-badge">ML</div>
+                            <h3 class="project-title">Employee Salary Prediction</h3>
+                            <p class="project-description">End-to-end ML pipeline with feature engineering and
+                                regression modeling for accurate salary prediction.</p>
+                            <div class="project-tech"><span class="tech-tag">Python</span><span
+                                    class="tech-tag">Scikit-learn</span></div>
+                            <a href="https://github.com/ashokkumarboya93" target="_blank"
+                                class="project-link toon-btn-sm"><i data-lucide="github" class="link-icon"></i>
+                                GitHub</a>
+                        </div>
+                    </div>
+                    <div class="netflix-card toon-card" data-index="5">
+                        <div class="project-img-wrap">
+                            <div class="project-img-placeholder data-bg"><i data-lucide="pie-chart"
+                                    class="proj-icon"></i>
+                                <div class="proj-img-deco deco-data"></div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-badge data-badge toon-badge">Data Analytics</div>
+                            <h3 class="project-title">Global Food Production Trends</h3>
+                            <p class="project-description">Analyzed production data (1961–2023) with interactive
+                                dashboards highlighting regional trends.</p>
+                            <div class="project-tech"><span class="tech-tag">Power BI</span><span class="tech-tag">Data
+                                    Analytics</span><span class="tech-tag">Visualization</span></div>
+                            <a href="https://github.com/ashokkumarboya93" target="_blank"
+                                class="project-link toon-btn-sm"><i data-lucide="github" class="link-icon"></i>
+                                GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="netflix-nav netflix-next" id="netflixNext" aria-label="Next">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                        stroke-linecap="round">
+                        <path d="M9 18l6-6-6-6" />
+                    </svg>
+                </button>
+                <!-- Netflix Dots Indicator -->
+                <div class="netflix-dots" id="netflixDots">
+                    <span class="netflix-dot active" data-dot="0"></span>
+                    <span class="netflix-dot" data-dot="1"></span>
+                    <span class="netflix-dot" data-dot="2"></span>
+                    <span class="netflix-dot" data-dot="3"></span>
+                    <span class="netflix-dot" data-dot="4"></span>
+                    <span class="netflix-dot" data-dot="5"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sprinkle Container (for click confetti) -->
+    <div class="sprinkle-container" id="sprinkleContainer"></div>
+
+    <!-- ========== EXPERIENCE SECTION (Tree Design) ========== -->
+    <section id="experience" class="section experience-section">
+        <div class="container">
+            <div class="section-header centered">
+                <h2 class="section-title">Career &amp; <span class="gradient-text">Internship Experience</span></h2>
+            </div>
+
+            <div class="exp-tree">
+                <!-- Newest first (top) -->
+                <div class="exp-tree-item current-item">
+                    <div class="tree-branch">
+                        <div class="tree-node current-node">
+                            <i data-lucide="circle-dot" class="node-icon"></i>
+                        </div>
+                        <div class="tree-connector"></div>
+                    </div>
+                    <div class="tree-card">
+                        <div class="experience-badge current-badge">
+                            <i data-lucide="circle" class="badge-dot-icon"></i> Current
+                        </div>
+                        <h3 class="experience-title">Java Full Stack Intern</h3>
+                        <p class="experience-company">TAP Academy</p>
+                        <p class="experience-description">
+                            Working on real-world Java full stack applications, strengthening backend development,
+                            database integration, and web application architecture.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="exp-tree-item">
+                    <div class="tree-branch">
+                        <div class="tree-node">
+                            <i data-lucide="circle" class="node-icon"></i>
+                        </div>
+                        <div class="tree-connector"></div>
+                    </div>
+                    <div class="tree-card">
+                        <div class="experience-badge">Jun – Aug 2025</div>
+                        <h3 class="experience-title">AI/ML Intern</h3>
+                        <p class="experience-company">Infosys Springboard</p>
+                        <p class="experience-description">
+                            Improved ML model accuracy from 78% to 90% through preprocessing and tuning. Automated
+                            feature extraction pipelines.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="exp-tree-item">
+                    <div class="tree-branch">
+                        <div class="tree-node">
+                            <i data-lucide="circle" class="node-icon"></i>
+                        </div>
+                        <div class="tree-connector"></div>
+                    </div>
+                    <div class="tree-card">
+                        <div class="experience-badge">May – Jul 2025</div>
+                        <h3 class="experience-title">AI Intern</h3>
+                        <p class="experience-company">AICTE IBM Edunet</p>
+                        <p class="experience-description">
+                            Implemented regression models and optimized datasets through hyperparameter tuning.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="exp-tree-item">
+                    <div class="tree-branch">
+                        <div class="tree-node">
+                            <i data-lucide="circle" class="node-icon"></i>
+                        </div>
+                    </div>
+                    <div class="tree-card">
+                        <div class="experience-badge">Mar – May 2025</div>
+                        <h3 class="experience-title">Data Analyst Intern</h3>
+                        <p class="experience-company">SmartInternz</p>
+                        <p class="experience-description">
+                            Performed EDA on 50k+ datasets and built automated dashboards reducing repetitive work by
+                            40%.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CERTIFICATIONS SECTION ========== -->
+    <section id="certifications" class="section certifications-section">
+        <div class="container">
+            <div class="section-header centered">
+                <h2 class="section-title">Professional <span class="gradient-text">Certifications</span></h2>
+            </div>
+
+            <div class="certifications-grid">
+                <div class="cert-card">
+                    <div class="cert-icon"><i data-lucide="award" class="lucide-icon lg"></i></div>
+                    <h3 class="cert-title">Getting Started with Data</h3>
+                    <p class="cert-issuer">IBM SkillsBuild</p>
+                    <div class="cert-shine"></div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon"><i data-lucide="brain" class="lucide-icon lg"></i></div>
+                    <h3 class="cert-title">Artificial Intelligence Fundamentals</h3>
+                    <p class="cert-issuer">IBM SkillsBuild</p>
+                    <div class="cert-shine"></div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon"><i data-lucide="search" class="lucide-icon lg"></i></div>
+                    <h3 class="cert-title">AI Vector Search Professional</h3>
+                    <p class="cert-issuer">Oracle</p>
+                    <div class="cert-shine"></div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon"><i data-lucide="bar-chart-3" class="lucide-icon lg"></i></div>
+                    <h3 class="cert-title">Data Analytics Essentials</h3>
+                    <p class="cert-issuer">CISCO</p>
+                    <div class="cert-shine"></div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon"><i data-lucide="terminal" class="lucide-icon lg"></i></div>
+                    <h3 class="cert-title">Python Crash Course</h3>
+                    <p class="cert-issuer">Campus Code</p>
+                    <div class="cert-shine"></div>
+                </div>
+            </div>
+
+            <!-- Beyond Coding -->
+            <div class="extracurricular">
+                <h3 class="extra-title">Beyond Coding</h3>
+                <div class="extra-grid">
+                    <div class="extra-card">
+                        <div class="extra-emoji"><i data-lucide="trophy" class="lucide-icon xl"></i></div>
+                        <h4>SRIT Hackathon</h4>
+                        <p>Built a Campus Communication Application (Full Stack Web App)</p>
+                    </div>
+                    <div class="extra-card">
+                        <div class="extra-emoji"><i data-lucide="gamepad-2" class="lucide-icon xl"></i></div>
+                        <h4>Google Arcade Challenges</h4>
+                        <p>Completed Generative AI &amp; Cloud-based tasks</p>
+                    </div>
+                    <div class="extra-card">
+                        <div class="extra-emoji"><i data-lucide="rocket" class="lucide-icon xl"></i></div>
+                        <h4>Kaggle 5-Day GenAI Program</h4>
+                        <p>Intensive Generative AI learning program</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-header centered">
+                <h2 class="section-title">Let's Build Something <span class="gradient-text">Amazing</span></h2>
+                <p class="section-subtitle">
+                    Ready to bring your ideas to life? Let's connect and create innovative solutions together.
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon"><i data-lucide="mail" class="lucide-icon"></i></div>
+                        <div class="info-details">
+                            <p class="info-label">Email</p>
+                            <a href="mailto:ashokkumarboya93@gmail.com"
+                                class="info-value">ashokkumarboya93@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon"><i data-lucide="phone" class="lucide-icon"></i></div>
+                        <div class="info-details">
+                            <p class="info-label">Phone</p>
+                            <a href="tel:+919390906845" class="info-value">+91 93909 06845</a>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon"><i data-lucide="map-pin" class="lucide-icon"></i></div>
+                        <div class="info-details">
+                            <p class="info-label">Location</p>
+                            <p class="info-value">Yemmiganur, Andhra Pradesh</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/ashokkumarboya93" target="_blank" class="social-btn">
+                            <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                            GitHub
+                        </a>
+                        <a href="https://linkedin.com/in/ashokkumarboya" target="_blank" class="social-btn">
+                            <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject <span class="optional">(Optional)</span></label>
+                        <input type="text" id="subject" name="subject" placeholder="Project collaboration">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">
+                        <span>Send Message</span>
+                        <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">&copy; 2026 BOYA ASHOK KUMAR</p>
+            <p class="footer-tagline">Crafted with passion and innovation.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
