@@ -1,5 +1,5 @@
 // Portfolio - Deploy-Ready JS
-// (Lucide Icons, Scroll Reveal, Nav, Toggle Mode, Netflix Carousel, Rain, Sprinkles)
+// (Lucide Icons, Scroll Reveal, Nav, Center-Focus Carousel, Rain, Sprinkles)
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ====== Lucide Icons ====== */
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ====== Scroll Reveal ====== */
     document.querySelectorAll('.section').forEach(s => {
         s.querySelectorAll(
-            '.section-header,.edu-card,.train-track,.project-card,.netflix-card,.exp-tree-item,.cert-card,.extra-card,.info-card,.contact-form'
+            '.section-header,.edu-card,.train-track,.carousel-card,.exp-tree-item,.cert-card,.extra-card,.info-card,.contact-form'
         ).forEach(el => el.classList.add('reveal'));
     });
 
@@ -21,6 +21,48 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    /* ====== Hero Stat Count-Up Animation ====== */
+    const statValues = document.querySelectorAll('.stat-value[data-count]');
+    let statsCounted = false;
+
+    function animateCountUp(el) {
+        const target = parseFloat(el.dataset.count);
+        const suffix = el.dataset.suffix || '';
+        const isDecimal = String(el.dataset.count).includes('.');
+        const duration = 1600; // ms
+        const steps = 50;
+        const stepTime = duration / steps;
+        let current = 0;
+        let step = 0;
+
+        const timer = setInterval(() => {
+            step++;
+            // ease-out quad
+            const progress = step / steps;
+            const eased = 1 - (1 - progress) * (1 - progress);
+            current = target * eased;
+
+            if (step >= steps) {
+                el.textContent = (isDecimal ? target.toFixed(1) : Math.round(target)) + suffix;
+                clearInterval(timer);
+            } else {
+                el.textContent = (isDecimal ? current.toFixed(1) : Math.round(current)) + suffix;
+            }
+        }, stepTime);
+    }
+
+    const statsObserver = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting && !statsCounted) {
+                statsCounted = true;
+                statValues.forEach(el => animateCountUp(el));
+            }
+        });
+    }, { threshold: 0.3 });
+
+    const heroStats = document.querySelector('.hero-stats');
+    if (heroStats) statsObserver.observe(heroStats);
 
     /* ====== Navbar Scroll & Active Link ====== */
     const nav = document.querySelector('.navbar');
@@ -78,108 +120,55 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ============================================================
-       PROJECTS: Toggle Mode (Normal Grid ↔ Animated Netflix)
+       CENTER-FOCUS CAROUSEL
        ============================================================ */
-    const toggleBtn = document.getElementById('modeToggleBtn');
-    const toggleWrap = document.getElementById('modeToggleWrap');
-    const projectsGrid = document.getElementById('projectsGrid');
-    const projectsNetflix = document.getElementById('projectsNetflix');
-    const labelNormal = document.querySelector('.mode-label-normal');
-    const labelAnimated = document.querySelector('.mode-label-animated');
-    let isAnimated = false;
-
-    function setMode(animated) {
-        isAnimated = animated;
-        if (animated) {
-            if (projectsGrid) projectsGrid.classList.remove('active-mode');
-            if (projectsNetflix) projectsNetflix.classList.add('active-mode');
-            if (toggleBtn) toggleBtn.classList.add('active');
-            if (labelNormal) labelNormal.classList.remove('active-label');
-            if (labelAnimated) labelAnimated.classList.add('active-label');
-            // Re-create Lucide icons in Netflix track since it was display:none
-            if (typeof lucide !== 'undefined') {
-                requestAnimationFrame(() => lucide.createIcons());
-            }
-            // Center on the first card after a brief delay (allow layout to settle)
-            setTimeout(() => scrollToNetflixCard(currentNetflixIndex), 120);
-        } else {
-            if (projectsNetflix) projectsNetflix.classList.remove('active-mode');
-            if (projectsGrid) projectsGrid.classList.add('active-mode');
-            if (toggleBtn) toggleBtn.classList.remove('active');
-            if (labelAnimated) labelAnimated.classList.remove('active-label');
-            if (labelNormal) labelNormal.classList.add('active-label');
-        }
-    }
-
-    // Only listen on toggleBtn — stop propagation so toggleWrap doesn't double-fire
-    if (toggleBtn) {
-        toggleBtn.addEventListener('click', e => {
-            e.stopPropagation();
-            setMode(!isAnimated);
-        });
-    }
-    // Wrap click for clicking labels/anywhere on the pill
-    if (toggleWrap) {
-        toggleWrap.addEventListener('click', e => {
-            // If the click came from the button itself, ignore (already handled)
-            if (e.target === toggleBtn || toggleBtn?.contains(e.target)) return;
-            setMode(!isAnimated);
-        });
-    }
-
-    /* ============================================================
-       Netflix Carousel Logic
-       ============================================================ */
-    const netflixTrack = document.getElementById('netflixTrack');
-    const netflixCards = netflixTrack
-        ? Array.from(netflixTrack.querySelectorAll('.netflix-card'))
+    const carouselTrack = document.getElementById('carouselTrack');
+    const carouselCards = carouselTrack
+        ? Array.from(carouselTrack.querySelectorAll('.carousel-card'))
         : [];
-    const netflixPrev = document.getElementById('netflixPrev');
-    const netflixNext = document.getElementById('netflixNext');
-    const netflixDots = document.querySelectorAll('.netflix-dot');
-    let currentNetflixIndex = 0;
+    const carouselPrev = document.getElementById('carouselPrev');
+    const carouselNext = document.getElementById('carouselNext');
+    const carouselDots = document.querySelectorAll('.carousel-dot');
+    let currentIndex = 0;
 
-    function scrollToNetflixCard(index) {
-        if (!netflixTrack || netflixCards.length === 0) return;
-        index = Math.max(0, Math.min(index, netflixCards.length - 1));
-        currentNetflixIndex = index;
+    function scrollToCard(index) {
+        if (!carouselTrack || carouselCards.length === 0) return;
+        index = Math.max(0, Math.min(index, carouselCards.length - 1));
+        currentIndex = index;
 
-        const card = netflixCards[index];
-        // Calculate the scroll position to center this card
-        const trackWidth = netflixTrack.clientWidth;
+        const card = carouselCards[index];
+        const trackWidth = carouselTrack.clientWidth;
         const cardLeft = card.offsetLeft;
         const cardWidth = card.offsetWidth;
         const scrollTarget = cardLeft - (trackWidth / 2) + (cardWidth / 2);
 
-        netflixTrack.scrollTo({ left: scrollTarget, behavior: 'smooth' });
-
-        // Update visuals immediately — no need to wait for scroll event
+        carouselTrack.scrollTo({ left: scrollTarget, behavior: 'smooth' });
         setActiveCard(index);
     }
 
     function setActiveCard(idx) {
-        netflixCards.forEach((card, i) => {
-            card.classList.toggle('netflix-active', i === idx);
+        carouselCards.forEach((card, i) => {
+            card.classList.toggle('active', i === idx);
         });
-        netflixDots.forEach((dot, i) => {
+        carouselDots.forEach((dot, i) => {
             dot.classList.toggle('active', i === idx);
         });
-        currentNetflixIndex = idx;
+        currentIndex = idx;
     }
 
-    // On scroll, detect which card is nearest to center
+    // On scroll, detect nearest-to-center card
     let scrollRaf = null;
     function onTrackScroll() {
         if (scrollRaf) return;
         scrollRaf = requestAnimationFrame(() => {
             scrollRaf = null;
-            if (!netflixTrack || netflixCards.length === 0) return;
-            const trackRect = netflixTrack.getBoundingClientRect();
+            if (!carouselTrack || carouselCards.length === 0) return;
+            const trackRect = carouselTrack.getBoundingClientRect();
             const centerX = trackRect.left + trackRect.width / 2;
             let closestIdx = 0;
             let closestDist = Infinity;
 
-            netflixCards.forEach((card, i) => {
+            carouselCards.forEach((card, i) => {
                 const rect = card.getBoundingClientRect();
                 const cardCenter = rect.left + rect.width / 2;
                 const dist = Math.abs(cardCenter - centerX);
@@ -193,46 +182,58 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (netflixTrack) {
-        netflixTrack.addEventListener('scroll', onTrackScroll, { passive: true });
+    if (carouselTrack) {
+        carouselTrack.addEventListener('scroll', onTrackScroll, { passive: true });
     }
 
     // Prev / Next buttons
-    if (netflixPrev) {
-        netflixPrev.addEventListener('click', () => {
-            scrollToNetflixCard(currentNetflixIndex - 1);
+    if (carouselPrev) {
+        carouselPrev.addEventListener('click', () => {
+            scrollToCard(currentIndex - 1);
         });
     }
-    if (netflixNext) {
-        netflixNext.addEventListener('click', () => {
-            scrollToNetflixCard(currentNetflixIndex + 1);
+    if (carouselNext) {
+        carouselNext.addEventListener('click', () => {
+            scrollToCard(currentIndex + 1);
         });
     }
 
     // Dot clicks
-    netflixDots.forEach(dot => {
+    carouselDots.forEach(dot => {
         dot.addEventListener('click', () => {
             const idx = parseInt(dot.dataset.dot, 10);
-            if (!isNaN(idx)) scrollToNetflixCard(idx);
+            if (!isNaN(idx)) scrollToCard(idx);
         });
     });
 
-    // Horizontal mouse-wheel scroll on the Netflix track
-    if (netflixTrack) {
-        netflixTrack.addEventListener('wheel', e => {
-            if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+    // Horizontal mouse-wheel scroll (only with Shift key to avoid blocking normal page scroll)
+    if (carouselTrack) {
+        carouselTrack.addEventListener('wheel', e => {
+            // Only hijack scroll when Shift is held, otherwise let page scroll normally
+            if (e.shiftKey && Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
                 e.preventDefault();
-                netflixTrack.scrollLeft += e.deltaY;
+                carouselTrack.scrollLeft += e.deltaY;
             }
         }, { passive: false });
     }
 
-    // Keyboard arrows when Netflix is visible
+    // Keyboard arrows
     document.addEventListener('keydown', e => {
-        if (!isAnimated) return;
-        if (e.key === 'ArrowLeft') scrollToNetflixCard(currentNetflixIndex - 1);
-        if (e.key === 'ArrowRight') scrollToNetflixCard(currentNetflixIndex + 1);
+        // Only respond when projects section is in view
+        const projectsSection = document.getElementById('projects');
+        if (!projectsSection) return;
+        const rect = projectsSection.getBoundingClientRect();
+        const inView = rect.top < window.innerHeight && rect.bottom > 0;
+        if (!inView) return;
+
+        if (e.key === 'ArrowLeft') scrollToCard(currentIndex - 1);
+        if (e.key === 'ArrowRight') scrollToCard(currentIndex + 1);
     });
+
+    // Initialize: center on first card after layout settles
+    if (carouselCards.length > 0) {
+        setTimeout(() => scrollToCard(0), 200);
+    }
 
     /* ============================================================
        Click Sprinkle / Confetti Effect
@@ -278,6 +279,30 @@ document.addEventListener('DOMContentLoaded', () => {
             sprinkleContainer.appendChild(span);
             span.addEventListener('animationend', () => span.remove());
         }
+    }
+
+    /* ============================================================
+       Skills Animation Toggle (Static vs Train Mode)
+       ============================================================ */
+    const skillsAnimateBtn = document.getElementById('skillsAnimateBtn');
+    const trainTracksContainer = document.getElementById('trainTracks');
+
+    if (skillsAnimateBtn && trainTracksContainer) {
+        skillsAnimateBtn.addEventListener('click', () => {
+            const isTrainMode = skillsAnimateBtn.classList.toggle('active');
+            
+            if (isTrainMode) {
+                trainTracksContainer.classList.remove('static-mode');
+            } else {
+                trainTracksContainer.classList.add('static-mode');
+            }
+            
+            // Update Toggle Button Text
+            const btnText = skillsAnimateBtn.querySelector('.btn-text');
+            if (btnText) {
+                btnText.textContent = isTrainMode ? 'Train: ON' : 'Train Mode';
+            }
+        });
     }
 
     /* ====== Contact Form Handler ====== */
