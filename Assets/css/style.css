@@ -1243,41 +1243,30 @@ a.logo:hover .logo-text {
     border: 2.5px solid var(--border-color);
     border-radius: var(--radius-xl);
     overflow: hidden;
-    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-    transform: scale(0.82);
-    opacity: 0.6;
+    transition: transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transform: scale(0.88);
+    opacity: 0.55;
     filter: blur(1.5px);
     cursor: pointer;
 }
 
 .carousel-card.active {
-    transform: scale(1.06);
+    transform: scale(1);
     opacity: 1;
     filter: blur(0);
-    box-shadow: var(--toon-shadow-hover), 0 16px 50px rgba(15, 60, 30, 0.15);
+    box-shadow: var(--toon-shadow), 0 8px 30px rgba(15, 60, 30, 0.1);
     z-index: 5;
     border-color: var(--green-dark);
 }
 
 .carousel-card:not(.active):hover {
-    opacity: 0.75;
-    transform: scale(0.85);
+    opacity: 0.7;
     filter: blur(0.5px);
 }
 
-/* Hide card body text on non-active cards */
-.carousel-card .carousel-card-body {
-    transition: opacity 0.5s ease, filter 0.5s ease, max-height 0.5s ease;
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 24px;
-}
-
-.carousel-card.active .carousel-card-body {
-    opacity: 1;
-    max-height: 400px;
+/* Card body always visible */
+.carousel-card-body {
     padding: 24px;
 }
 
@@ -1348,7 +1337,6 @@ a.logo:hover .logo-text {
 }
 
 /* --- Card Body --- */
-/* padding controlled by .active state above */
 
 .project-badge {
     display: inline-block;
