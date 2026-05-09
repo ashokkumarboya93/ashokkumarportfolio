@@ -1245,14 +1245,14 @@ a.logo:hover .logo-text {
     overflow: hidden;
     transition: transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    transform: scale(0.88);
+    transform: scale(0.93);
     opacity: 0.55;
     filter: blur(1.5px);
     cursor: pointer;
 }
 
 .carousel-card.active {
-    transform: scale(1.08);
+    transform: scale(1);
     opacity: 1;
     filter: blur(0);
     box-shadow: var(--toon-shadow), 0 8px 30px rgba(15, 60, 30, 0.1);
