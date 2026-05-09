@@ -206,13 +206,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Horizontal mouse-wheel scroll (only with Shift key to avoid blocking normal page scroll)
+    // Netflix-style: mouse wheel scrolls one card at a time
     if (carouselTrack) {
+        let wheelTimeout = null;
         carouselTrack.addEventListener('wheel', e => {
-            // Only hijack scroll when Shift is held, otherwise let page scroll normally
-            if (e.shiftKey && Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-                e.preventDefault();
-                carouselTrack.scrollLeft += e.deltaY;
+            e.preventDefault();
+            if (wheelTimeout) return; // throttle
+            wheelTimeout = setTimeout(() => { wheelTimeout = null; }, 400);
+            if (e.deltaY > 0 || e.deltaX > 0) {
+                scrollToCard(currentIndex + 1);
+            } else {
+                scrollToCard(currentIndex - 1);
             }
         }, { passive: false });
     }
