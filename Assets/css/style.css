@@ -72,7 +72,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    
     scroll-padding-top: 80px;
 }
 
@@ -1929,7 +1929,7 @@ a.logo:hover .logo-text {
     gap: 20px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
+    
     padding: 40px calc(50% - 190px) 50px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -3671,3 +3671,4 @@ body.theme-purple {
         font-size: 1.2rem;
     }
 }
+

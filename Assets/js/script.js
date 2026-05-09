@@ -456,3 +456,29 @@ document.addEventListener('DOMContentLoaded', () => {
     
     setTimeout(type, 1000);
 });
+
+// Lenis Smooth Scrolling Initialization
+document.addEventListener('DOMContentLoaded', () => {
+    if (typeof Lenis !== 'undefined') {
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+            smooth: true,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+        // Connect anchor links to Lenis scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                lenis.scrollTo(this.getAttribute('href'));
+            });
+        });
+    }
+});
