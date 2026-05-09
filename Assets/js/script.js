@@ -461,9 +461,11 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     if (typeof Lenis !== 'undefined') {
         const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
-            smooth: true,
+            lerp: 0.07, // Controls the buttery smoothness (lower is smoother/heavier)
+            wheelMultiplier: 1.0,
+            smoothWheel: true,
+            touchMultiplier: 2,
+            infinite: false,
         });
 
         function raf(time) {
