@@ -1242,27 +1242,27 @@ a.logo:hover .logo-text {
     border: 2.5px solid var(--bg-dark);
     border-radius: var(--radius-xl);
     overflow: hidden;
-    transition: all 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
     box-shadow: var(--toon-shadow);
-    transform: scale(0.82);
+    transform: scale(0.75);
     opacity: 0.5;
-    filter: blur(1px) saturate(0.8);
+    filter: blur(0) saturate(0.85);
     cursor: pointer;
 }
 
 .carousel-card.active {
-    transform: scale(1.05);
+    transform: scale(1);
     opacity: 1;
     filter: blur(0) saturate(1);
-    box-shadow: 6px 6px 0px var(--green-primary), 0 18px 50px rgba(15, 60, 30, 0.15);
+    box-shadow: var(--toon-shadow-hover), 0 12px 40px rgba(15, 60, 30, 0.12);
     z-index: 5;
     border-color: var(--green-dark);
 }
 
 .carousel-card:not(.active):hover {
-    opacity: 0.7;
-    transform: scale(0.86);
-    filter: blur(0.5px) saturate(0.9);
+    opacity: 0.65;
+    transform: scale(0.78);
+    filter: blur(0) saturate(0.9);
 }
 
 /* --- Card Logo Area --- */
