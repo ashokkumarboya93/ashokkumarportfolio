@@ -888,7 +888,10 @@ a.logo:hover .logo-text {
 .skill-category {
     margin-bottom: 50px;
 }
-.skill-category:last-child { margin-bottom: 0; }
+
+.skill-category:last-child {
+    margin-bottom: 0;
+}
 
 .skill-category-title {
     font-family: var(--font-primary);
@@ -901,6 +904,7 @@ a.logo:hover .logo-text {
     display: inline-block;
     width: 100%;
 }
+
 .skill-category-title::after {
     content: '';
     display: block;
@@ -909,16 +913,46 @@ a.logo:hover .logo-text {
     border-radius: 4px;
     margin: 10px auto 0;
 }
-.accent-blue-text { color: #3b82f6; }
-.accent-blue-text::after { background: #3b82f6; }
-.accent-purple-text { color: #8b5cf6; }
-.accent-purple-text::after { background: #8b5cf6; }
-.accent-teal-text { color: #14b8a6; }
-.accent-teal-text::after { background: #14b8a6; }
-.accent-orange-text { color: #f59e0b; }
-.accent-orange-text::after { background: #f59e0b; }
-.accent-pink-text { color: #ec4899; }
-.accent-pink-text::after { background: #ec4899; }
+
+.accent-blue-text {
+    color: #3b82f6;
+}
+
+.accent-blue-text::after {
+    background: #3b82f6;
+}
+
+.accent-purple-text {
+    color: #8b5cf6;
+}
+
+.accent-purple-text::after {
+    background: #8b5cf6;
+}
+
+.accent-teal-text {
+    color: #14b8a6;
+}
+
+.accent-teal-text::after {
+    background: #14b8a6;
+}
+
+.accent-orange-text {
+    color: #f59e0b;
+}
+
+.accent-orange-text::after {
+    background: #f59e0b;
+}
+
+.accent-pink-text {
+    color: #ec4899;
+}
+
+.accent-pink-text::after {
+    background: #ec4899;
+}
 
 /* Orb Grid */
 .skills-orb-grid {
@@ -936,10 +970,11 @@ a.logo:hover .logo-text {
     align-items: center;
     gap: 10px;
     cursor: default;
-    transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), filter 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
     position: relative;
     width: 140px;
 }
+
 .skill-orb:hover {
     transform: translateY(-12px) scale(1.1);
     filter: brightness(1.05);
@@ -951,6 +986,7 @@ a.logo:hover .logo-text {
     width: 120px;
     height: 120px;
 }
+
 .orb-ring svg {
     width: 100%;
     height: 100%;
@@ -972,7 +1008,7 @@ a.logo:hover .logo-text {
     stroke-linecap: round;
     stroke-dasharray: 339.292;
     stroke-dashoffset: 339.292;
-    transition: stroke-dashoffset 1.8s cubic-bezier(0.4,0,0.2,1);
+    transition: stroke-dashoffset 1.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Neon glow circle - follows the ring shape */
@@ -987,9 +1023,11 @@ a.logo:hover .logo-text {
     transition: opacity 1.8s ease;
     pointer-events: none;
 }
+
 .skill-orb.animated .orb-ring::after {
     opacity: 0.5;
 }
+
 .skill-orb.animated .orb-fill {
     stroke-dashoffset: var(--orb-offset, 0);
 }
@@ -997,17 +1035,17 @@ a.logo:hover .logo-text {
 /* 3D Glass inner circle */
 .orb-content {
     position: absolute;
-    top: 50%;
+    top: 39.5%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 96px;
     height: 96px;
     border-radius: 50%;
-    background: linear-gradient(145deg, #ffffff 0%, #f4f6f9 60%, #eaeff4 100%);
-    border: 2px solid rgba(230,235,240,0.8);
+    background: #ffffff;
+    border: 2px solid rgba(230, 235, 240, 0.8);
     box-shadow:
-        inset 0 -3px 6px rgba(0,0,0,0.05),
-        inset 0 2px 4px rgba(255,255,255,0.9);
+        inset 0 -3px 6px rgba(0, 0, 0, 0.05),
+        inset 0 2px 4px rgba(255, 255, 255, 0.9);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1025,14 +1063,12 @@ a.logo:hover .logo-text {
     left: -60%;
     width: 50%;
     height: 200%;
-    background: linear-gradient(
-        105deg,
-        transparent 0%,
-        rgba(255,255,255,0) 40%,
-        rgba(255,255,255,0.6) 50%,
-        rgba(255,255,255,0) 60%,
-        transparent 100%
-    );
+    background: linear-gradient(105deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0) 40%,
+            rgba(255, 255, 255, 0.6) 50%,
+            rgba(255, 255, 255, 0) 60%,
+            transparent 100%);
     transform: skewX(-15deg);
     animation: orbShimmer 4s ease-in-out infinite;
     pointer-events: none;
@@ -1040,10 +1076,27 @@ a.logo:hover .logo-text {
 }
 
 @keyframes orbShimmer {
-    0%, 100% { left: -60%; opacity: 0; }
-    15% { opacity: 1; }
-    50% { left: 120%; opacity: 0.6; }
-    51%, 99% { opacity: 0; left: 120%; }
+
+    0%,
+    100% {
+        left: -60%;
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    50% {
+        left: 120%;
+        opacity: 0.6;
+    }
+
+    51%,
+    99% {
+        opacity: 0;
+        left: 120%;
+    }
 }
 
 /* Glow intensifies on hover */
@@ -1056,10 +1109,11 @@ a.logo:hover .logo-text {
     width: 38px;
     height: 38px;
     object-fit: contain;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12));
     position: relative;
     z-index: 1;
 }
+
 .orb-icon {
     width: 34px;
     height: 34px;
@@ -1089,30 +1143,56 @@ a.logo:hover .logo-text {
     color: var(--text-dark);
     text-align: center;
     white-space: nowrap;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 /* 3D Toon Title Style */
 .toon-3d-title {
     color: var(--text-dark);
     text-shadow:
-        0 1px 0 rgba(74,222,128,0.4),
-        0 2px 0 rgba(74,222,128,0.3),
-        0 3px 0 rgba(74,222,128,0.2),
-        0 4px 8px rgba(15,60,30,0.1);
-    -webkit-text-stroke: 0.5px rgba(15,60,30,0.15);
+        0 1px 0 rgba(74, 222, 128, 0.4),
+        0 2px 0 rgba(74, 222, 128, 0.3),
+        0 3px 0 rgba(74, 222, 128, 0.2),
+        0 4px 8px rgba(15, 60, 30, 0.1);
+    -webkit-text-stroke: 0.5px rgba(15, 60, 30, 0.15);
     paint-order: stroke fill;
 }
 
 @media (max-width: 768px) {
-    .skills-orb-grid { gap: 22px; }
-    .skill-orb { width: 110px; }
-    .orb-ring { width: 95px; height: 95px; }
-    .orb-content { width: 76px; height: 76px; }
-    .orb-logo { width: 30px; height: 30px; }
-    .orb-percent { font-size: 0.65rem; }
-    .orb-label { font-size: 0.72rem; }
-    .skill-category-title { font-size: 1.1rem; }
+    .skills-orb-grid {
+        gap: 22px;
+    }
+
+    .skill-orb {
+        width: 110px;
+    }
+
+    .orb-ring {
+        width: 95px;
+        height: 95px;
+    }
+
+    .orb-content {
+        width: 76px;
+        height: 76px;
+    }
+
+    .orb-logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .orb-percent {
+        font-size: 0.65rem;
+    }
+
+    .orb-label {
+        font-size: 0.72rem;
+    }
+
+    .skill-category-title {
+        font-size: 1.1rem;
+    }
 }
 
 
@@ -1216,7 +1296,7 @@ a.logo:hover .logo-text {
     height: 52px;
     object-fit: contain;
     transition: transform 0.3s ease;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .carousel-card.active .tech-logo {
@@ -1240,8 +1320,15 @@ a.logo:hover .logo-text {
 }
 
 @keyframes logoFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
 }
 
 /* --- Card Body --- */
@@ -1605,9 +1692,17 @@ a.logo:hover .logo-text {
 }
 
 @keyframes pulseGlow {
-    0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(74, 222, 128, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+    0% {
+        box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(74, 222, 128, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+    }
 }
 
 .exp-card:hover {
@@ -1645,7 +1740,8 @@ a.logo:hover .logo-text {
     flex: 1;
 }
 
-.exp-badge, .exp-date {
+.exp-badge,
+.exp-date {
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -1734,13 +1830,16 @@ a.logo:hover .logo-text {
     .experience-grid::before {
         left: 20px;
     }
+
     .experience-item {
         justify-content: flex-start !important;
         padding-left: 50px;
     }
+
     .experience-item::after {
         left: 20px;
     }
+
     .exp-card {
         width: 100%;
     }
@@ -2460,8 +2559,8 @@ a.info-value:hover {
     letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: 20px;
-    border: 2px solid rgba(0,0,0,0.1);
-    box-shadow: 2px 2px 0px rgba(0,0,0,0.08);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.08);
 }
 
 .project-detail-title {
