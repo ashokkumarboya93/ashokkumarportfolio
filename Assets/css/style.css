@@ -3291,74 +3291,75 @@ a.info-value:hover {
     border-radius: 4px;
 }
 
+
 /* ============================================
    THEMES (Triggered by Logo Click)
    ============================================ */
 
-/* Blue Theme (Dark Slate & Neon Blue) */
+/* Blue Theme (Bright) */
 body.theme-blue {
-    --bg-white: #1e293b;
-    --bg-light: #0f172a;
-    --bg-section: #020617;
-    --bg-card: #1e293b;
-    --bg-dark: #000000;
-    --bg-darker: #000000;
+    --bg-white: #ffffff;
+    --bg-light: #f0f9ff;
+    --bg-section: #e0f2fe;
+    --bg-card: #ffffff;
+    --bg-dark: #1e3a8a;
+    --bg-darker: #172554;
     
-    --text-dark: #f8fafc;
-    --text-body: #cbd5e1;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
+    --text-dark: #1e3a8a;
+    --text-body: #1e40af;
+    --text-secondary: #2563eb;
+    --text-muted: #3b82f6;
     --text-white: #ffffff;
     
     --green-primary: #3b82f6;
-    --green-dark: #60a5fa;
-    --green-darker: #2563eb;
-    --green-light: #1e3a8a;
-    --green-glow: rgba(59, 130, 246, 0.25);
+    --green-dark: #1d4ed8;
+    --green-darker: #1e3a8a;
+    --green-light: #eff6ff;
+    --green-glow: rgba(59, 130, 246, 0.15);
     
-    --toon-shadow: 4px 4px 0px rgba(0, 0, 0, 0.8);
-    --toon-shadow-hover: 6px 6px 0px rgba(59, 130, 246, 0.4);
+    --toon-shadow: 4px 4px 0px rgba(30, 58, 138, 0.1);
+    --toon-shadow-hover: 6px 6px 0px rgba(59, 130, 246, 0.2);
     --gradient-green: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 100%);
     --gradient-hero: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 50%, #8b5cf6 100%);
-    --gradient-card: linear-gradient(180deg, rgba(59, 130, 246, 0.05) 0%, transparent 100%);
+    --gradient-card: linear-gradient(180deg, rgba(59, 130, 246, 0.04) 0%, transparent 100%);
     
-    --nav-bg-color: rgba(30, 41, 59, 0.4);
-    --nav-bg-scrolled: rgba(15, 23, 42, 0.95);
+    --nav-bg-color: rgba(255, 255, 255, 0.12);
+    --nav-bg-scrolled: rgba(255, 255, 255, 0.95);
 }
 
-/* Black Theme (ChatGPT Dark Mode) */
+/* Black Theme (Bright) */
 body.theme-black {
-    --bg-white: #2f2f2f;
-    --bg-light: #212121;
-    --bg-section: #171717;
-    --bg-card: #2f2f2f;
-    --bg-dark: #000000;
+    --bg-white: #ffffff;
+    --bg-light: #f9fafb;
+    --bg-section: #f3f4f6;
+    --bg-card: #ffffff;
+    --bg-dark: #111111;
     --bg-darker: #000000;
     
-    --text-dark: #ececec;
-    --text-body: #d1d5db;
-    --text-secondary: #9ca3af;
+    --text-dark: #000000;
+    --text-body: #374151;
+    --text-secondary: #4b5563;
     --text-muted: #6b7280;
     --text-white: #ffffff;
     
-    --green-primary: #e5e5e5;
-    --green-dark: #ffffff;
-    --green-darker: #cccccc;
-    --green-light: #3f3f3f;
-    --green-glow: rgba(255, 255, 255, 0.1);
+    --green-primary: #333333;
+    --green-dark: #111111;
+    --green-darker: #000000;
+    --green-light: #f3f4f6;
+    --green-glow: rgba(0, 0, 0, 0.1);
     
-    --toon-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
-    --toon-shadow-hover: 6px 6px 0px rgba(255, 255, 255, 0.2);
-    --gradient-green: linear-gradient(135deg, #e5e5e5 0%, #a3a3a3 100%);
-    --gradient-dark: linear-gradient(135deg, #212121 0%, #000000 100%);
-    --gradient-hero: linear-gradient(135deg, #ffffff 0%, #a3a3a3 50%, #4b5563 100%);
-    --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+    --toon-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+    --toon-shadow-hover: 6px 6px 0px rgba(0, 0, 0, 0.2);
+    --gradient-green: linear-gradient(135deg, #555555 0%, #222222 100%);
+    --gradient-dark: linear-gradient(135deg, #111111 0%, #000000 100%);
+    --gradient-hero: linear-gradient(135deg, #666666 0%, #333333 50%, #000000 100%);
+    --gradient-card: linear-gradient(180deg, rgba(0, 0, 0, 0.03) 0%, transparent 100%);
     
-    --nav-bg-color: rgba(47, 47, 47, 0.4);
-    --nav-bg-scrolled: rgba(33, 33, 33, 0.95);
+    --nav-bg-color: rgba(255, 255, 255, 0.12);
+    --nav-bg-scrolled: rgba(255, 255, 255, 0.95);
 }
 
-/* Goldish Yellow Theme (Warm Amber Light Mode) */
+/* Goldish Yellow Theme (Bright) */
 body.theme-goldish-yellow {
     --bg-white: #ffffff;
     --bg-light: #fffbeb;
@@ -3386,10 +3387,10 @@ body.theme-goldish-yellow {
     --gradient-card: linear-gradient(180deg, rgba(245, 158, 11, 0.04) 0%, transparent 100%);
     
     --nav-bg-color: rgba(255, 255, 255, 0.12);
-    --nav-bg-scrolled: rgba(255, 253, 235, 0.95);
+    --nav-bg-scrolled: rgba(255, 255, 255, 0.95);
 }
 
-/* Pale Pink Theme (Soft Pink Light Mode) */
+/* Pale Pink Theme (Bright) */
 body.theme-pale-pink {
     --bg-white: #ffffff;
     --bg-light: #fdf2f8;
@@ -3417,67 +3418,67 @@ body.theme-pale-pink {
     --gradient-card: linear-gradient(180deg, rgba(244, 114, 182, 0.04) 0%, transparent 100%);
     
     --nav-bg-color: rgba(255, 255, 255, 0.12);
-    --nav-bg-scrolled: rgba(253, 242, 248, 0.95);
+    --nav-bg-scrolled: rgba(255, 255, 255, 0.95);
 }
 
-/* Red Theme (Dark Stone & Crimson) */
+/* Red Theme (Bright) */
 body.theme-red {
-    --bg-white: #292524;
-    --bg-light: #1c1917;
-    --bg-section: #0c0a09;
-    --bg-card: #292524;
-    --bg-dark: #000000;
-    --bg-darker: #000000;
+    --bg-white: #ffffff;
+    --bg-light: #fef2f2;
+    --bg-section: #fee2e2;
+    --bg-card: #ffffff;
+    --bg-dark: #7f1d1d;
+    --bg-darker: #450a0a;
     
-    --text-dark: #fafaf9;
-    --text-body: #d6d3d1;
-    --text-secondary: #a8a29e;
-    --text-muted: #78716c;
+    --text-dark: #7f1d1d;
+    --text-body: #991b1b;
+    --text-secondary: #b91c1c;
+    --text-muted: #dc2626;
     --text-white: #ffffff;
     
     --green-primary: #ef4444;
-    --green-dark: #f87171;
-    --green-darker: #dc2626;
-    --green-light: #7f1d1d;
-    --green-glow: rgba(239, 68, 68, 0.25);
+    --green-dark: #b91c1c;
+    --green-darker: #7f1d1d;
+    --green-light: #fee2e2;
+    --green-glow: rgba(239, 68, 68, 0.15);
     
-    --toon-shadow: 4px 4px 0px rgba(0, 0, 0, 0.8);
-    --toon-shadow-hover: 6px 6px 0px rgba(239, 68, 68, 0.4);
+    --toon-shadow: 4px 4px 0px rgba(127, 29, 29, 0.1);
+    --toon-shadow-hover: 6px 6px 0px rgba(239, 68, 68, 0.2);
     --gradient-green: linear-gradient(135deg, #ef4444 0%, #f87171 100%);
     --gradient-hero: linear-gradient(135deg, #ef4444 0%, #f87171 50%, #f59e0b 100%);
-    --gradient-card: linear-gradient(180deg, rgba(239, 68, 68, 0.05) 0%, transparent 100%);
+    --gradient-card: linear-gradient(180deg, rgba(239, 68, 68, 0.04) 0%, transparent 100%);
     
-    --nav-bg-color: rgba(41, 37, 36, 0.4);
-    --nav-bg-scrolled: rgba(28, 25, 23, 0.95);
+    --nav-bg-color: rgba(255, 255, 255, 0.12);
+    --nav-bg-scrolled: rgba(255, 255, 255, 0.95);
 }
 
-/* Purple Theme (Deep Indigo & Neon Purple) */
+/* Purple Theme (Bright) */
 body.theme-purple {
-    --bg-white: #2e1065;
-    --bg-light: #1e1b4b;
-    --bg-section: #0f172a;
-    --bg-card: #2e1065;
-    --bg-dark: #000000;
-    --bg-darker: #000000;
+    --bg-white: #ffffff;
+    --bg-light: #faf5ff;
+    --bg-section: #f3e8ff;
+    --bg-card: #ffffff;
+    --bg-dark: #4c1d95;
+    --bg-darker: #2e1065;
     
-    --text-dark: #faf5ff;
-    --text-body: #d8b4fe;
-    --text-secondary: #a855f7;
-    --text-muted: #7e22ce;
+    --text-dark: #4c1d95;
+    --text-body: #6b21a8;
+    --text-secondary: #7e22ce;
+    --text-muted: #9333ea;
     --text-white: #ffffff;
     
-    --green-primary: #c084fc;
-    --green-dark: #d8b4fe;
-    --green-darker: #a855f7;
-    --green-light: #4c1d95;
-    --green-glow: rgba(192, 132, 252, 0.25);
+    --green-primary: #a855f7;
+    --green-dark: #7e22ce;
+    --green-darker: #581c87;
+    --green-light: #f3e8ff;
+    --green-glow: rgba(168, 85, 247, 0.15);
     
-    --toon-shadow: 4px 4px 0px rgba(0, 0, 0, 0.8);
-    --toon-shadow-hover: 6px 6px 0px rgba(192, 132, 252, 0.4);
-    --gradient-green: linear-gradient(135deg, #c084fc 0%, #a855f7 100%);
-    --gradient-hero: linear-gradient(135deg, #c084fc 0%, #a855f7 50%, #db2777 100%);
-    --gradient-card: linear-gradient(180deg, rgba(192, 132, 252, 0.05) 0%, transparent 100%);
+    --toon-shadow: 4px 4px 0px rgba(76, 29, 149, 0.1);
+    --toon-shadow-hover: 6px 6px 0px rgba(168, 85, 247, 0.2);
+    --gradient-green: linear-gradient(135deg, #a855f7 0%, #c084fc 100%);
+    --gradient-hero: linear-gradient(135deg, #a855f7 0%, #c084fc 50%, #db2777 100%);
+    --gradient-card: linear-gradient(180deg, rgba(168, 85, 247, 0.04) 0%, transparent 100%);
     
-    --nav-bg-color: rgba(46, 16, 101, 0.4);
-    --nav-bg-scrolled: rgba(30, 27, 75, 0.95);
+    --nav-bg-color: rgba(255, 255, 255, 0.12);
+    --nav-bg-scrolled: rgba(255, 255, 255, 0.95);
 }
