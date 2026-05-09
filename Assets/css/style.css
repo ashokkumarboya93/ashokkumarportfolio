@@ -882,28 +882,141 @@ a.logo:hover .logo-text {
     .laptop-screen { width: 140px; padding: 12px; }
     .laptop-base { width: 170px; }
 }
-/* Robot Mascot Image */
-.anim-robot-img {
-    width: 130px;
-    height: auto;
-    margin-left: 15px;
-    align-self: flex-end;
-    animation: robotIdle 3s ease-in-out infinite;
-    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));
+/* WALL-E Style Robot */
+.walle-robot {
     position: relative;
     z-index: 2;
+    margin-left: 25px;
+    align-self: flex-end;
+    animation: robotIdle 3s ease-in-out infinite;
 }
 
 @keyframes robotIdle {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    25% { transform: translateY(-8px) rotate(1deg); }
-    75% { transform: translateY(-3px) rotate(-1deg); }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Eye stalk / binoculars */
+.walle-neck { display: flex; flex-direction: column; align-items: center; }
+
+.walle-eye-stalk {
+    display: flex;
+    gap: 2px;
+}
+
+.walle-eye {
+    width: 28px;
+    height: 28px;
+    background: var(--bg-dark);
+    border-radius: 50%;
+    border: 3px solid var(--green-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 12px var(--green-primary), 0 0 25px rgba(74,222,128,0.3);
+}
+
+.walle-pupil {
+    width: 12px;
+    height: 12px;
+    background: var(--green-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--green-primary), 0 0 16px var(--green-primary);
+    animation: eyeGlow 2s ease-in-out infinite;
+}
+
+@keyframes eyeGlow {
+    0%, 100% { box-shadow: 0 0 6px var(--green-primary); }
+    50% { box-shadow: 0 0 14px var(--green-primary), 0 0 28px rgba(74,222,128,0.4); }
+}
+
+.walle-neck-bar {
+    width: 8px;
+    height: 14px;
+    background: var(--green-dark);
+    border-radius: 2px;
+}
+
+/* Body - boxy like WALL-E */
+.walle-body {
+    width: 60px;
+    height: 50px;
+    background: var(--green-dark);
+    border-radius: 6px;
+    border: 2.5px solid var(--bg-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 8px;
+    box-shadow: inset 0 -4px 8px rgba(0,0,0,0.15), 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.walle-panel {
+    width: 80%;
+    height: 5px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 2px;
+}
+
+/* Arms */
+.walle-arm {
+    position: absolute;
+    width: 10px;
+    height: 35px;
+    background: var(--green-dark);
+    border: 2px solid var(--bg-dark);
+    border-radius: 5px;
+    top: 50px;
+}
+
+.walle-arm-l {
+    left: -14px;
+    transform-origin: top center;
+    animation: armWave 4s ease-in-out infinite;
+}
+
+.walle-arm-r {
+    right: -14px;
+    transform-origin: top center;
+    animation: armWave 4s ease-in-out infinite 2s;
+}
+
+@keyframes armWave {
+    0%, 100% { transform: rotate(5deg); }
+    50% { transform: rotate(-15deg); }
+}
+
+/* Tank treads */
+.walle-treads {
+    display: flex;
+    justify-content: space-between;
+    width: 74px;
+    margin: 3px auto 0;
+    margin-left: -7px;
+}
+
+.walle-tread {
+    width: 28px;
+    height: 22px;
+    background: var(--bg-dark);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tread-inner {
+    width: 16px;
+    height: 12px;
+    border: 2px solid rgba(74,222,128,0.3);
+    border-radius: 4px;
 }
 
 @media (max-width: 768px) {
-    .anim-robot-img { width: 90px; margin-left: 8px; }
+    .walle-robot { transform: scale(0.75); margin-left: 10px; }
 }
-
 /* Education Cards */
 .edu-card {
     padding: 28px;
@@ -1619,8 +1732,8 @@ a.logo:hover .logo-text {
 }
 
 .carousel-dot {
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
     background: var(--border-color);
     border: 2px solid var(--bg-dark);
     border-radius: 50%;
