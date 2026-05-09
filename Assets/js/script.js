@@ -315,20 +315,41 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ====== Contact Form Handler ====== */
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', e => {
+        contactForm.addEventListener('submit', async e => {
             e.preventDefault();
             const btn = contactForm.querySelector('button[type="submit"]');
             if (btn) {
                 const originalHTML = btn.innerHTML;
-                btn.innerHTML = '<span>Message Sent! ✓</span>';
+                btn.innerHTML = '<span>Sending... ⏳</span>';
                 btn.disabled = true;
                 btn.style.opacity = '0.7';
+
+                const formData = new FormData(contactForm);
+                
+                try {
+                    const response = await fetch("https://formspree.io/f/mkoyqkwa", {
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        btn.innerHTML = '<span>Message Sent! ✨</span>';
+                        contactForm.reset();
+                    } else {
+                        btn.innerHTML = '<span>Error! Try again.</span>';
+                    }
+                } catch (error) {
+                    btn.innerHTML = '<span>Error! Try again.</span>';
+                }
+
                 setTimeout(() => {
                     btn.innerHTML = originalHTML;
                     btn.disabled = false;
                     btn.style.opacity = '1';
-                    contactForm.reset();
-                }, 2500);
+                }, 3500);
             }
         });
     }
