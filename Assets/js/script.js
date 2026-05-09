@@ -333,3 +333,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Theme Switcher
+document.addEventListener('DOMContentLoaded', () => {
+    const themes = [
+        '', // Default (Green)
+        'theme-blue',
+        'theme-black',
+        'theme-goldish-yellow',
+        'theme-pale-pink',
+        'theme-red',
+        'theme-purple'
+    ];
+    let currentThemeIndex = 0;
+
+    const themeToggleBtn = document.getElementById('themeToggle');
+    if(themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', (e) => {
+            // Remove current theme class if it exists
+            if (themes[currentThemeIndex]) {
+                document.body.classList.remove(themes[currentThemeIndex]);
+            }
+            
+            // Increment and wrap around
+            currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+            
+            // Add new theme class
+            if (themes[currentThemeIndex]) {
+                document.body.classList.add(themes[currentThemeIndex]);
+            }
+        });
+    }
+});
