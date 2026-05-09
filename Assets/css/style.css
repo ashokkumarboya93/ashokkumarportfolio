@@ -476,8 +476,8 @@ a.logo:hover .logo-text {
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(rgba(15, 60, 30, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(15, 60, 30, 0.03) 1px, transparent 1px);
+        linear-gradient(color-mix(in srgb, var(--bg-dark) 8%, transparent) 1px, transparent 1px),
+        linear-gradient(90deg, color-mix(in srgb, var(--bg-dark) 8%, transparent) 1px, transparent 1px);
     background-size: 60px 60px;
     z-index: 0;
 }
@@ -3088,8 +3088,8 @@ a.info-value:hover {
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(rgba(15, 60, 30, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(15, 60, 30, 0.03) 1px, transparent 1px);
+        linear-gradient(color-mix(in srgb, var(--bg-dark) 8%, transparent) 1px, transparent 1px),
+        linear-gradient(90deg, color-mix(in srgb, var(--bg-dark) 8%, transparent) 1px, transparent 1px);
     background-size: 60px 60px;
     z-index: 0;
 }
@@ -3452,3 +3452,4 @@ body.theme-purple {
     --nav-bg-color: rgba(255, 255, 255, 0.12);
     --nav-bg-scrolled: rgba(255, 255, 255, 0.95);
 }
+
