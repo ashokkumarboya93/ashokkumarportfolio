@@ -2274,7 +2274,7 @@ a.logo:hover .logo-text {
     height: 100%;
     object-fit: contain;
     border-radius: 10px;
-    padding: 4px;
+    padding: 8px;
     background: #ffffff;
 }
 
@@ -2444,7 +2444,7 @@ a.logo:hover .logo-text {
 }
 
 .cert-logo-img {
-    height: 48px;
+    height: 32px;
     width: auto;
     max-width: 100%;
     object-fit: contain;
