@@ -3629,3 +3629,45 @@ body.theme-purple {
     --nav-bg-color: rgba(255, 255, 255, 0.12);
     --nav-bg-scrolled: rgba(255, 255, 255, 0.95);
 }
+/* ============================================
+   3D TYPING ANIMATION TEXT
+   ============================================ */
+.role-typing-text {
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--green-primary);
+    text-align: center;
+    margin-top: 15px;
+    letter-spacing: 1.5px;
+    /* 3D text effect */
+    text-shadow: 
+        1px 1px 0px var(--bg-dark),
+        2px 2px 0px var(--bg-dark),
+        3px 3px 0px var(--bg-dark),
+        4px 4px 5px rgba(0, 0, 0, 0.3);
+    min-height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.role-typing-text::after {
+    content: '|';
+    animation: typingBlink 1s step-end infinite;
+    margin-left: 4px;
+    color: var(--text-dark);
+}
+
+@keyframes typingBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+    .role-typing-text {
+        font-size: 1rem;
+    }
+}

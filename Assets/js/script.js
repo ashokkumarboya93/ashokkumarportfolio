@@ -389,3 +389,49 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
+// Typing Animation Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const roles = ["FULL STACK DEVELOPER", "AI/ML ENGINEER", "JAVA DEVELOPER", "AI DEVELOPER"];
+    const typingDelay = 100;
+    const erasingDelay = 50;
+    const newRoleDelay = 2000;
+    
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    
+    const elements = [
+        document.getElementById('heroTypingText'),
+        document.getElementById('aboutTypingText')
+    ].filter(el => el !== null);
+
+    function type() {
+        if (elements.length === 0) return;
+        
+        const currentRole = roles[roleIndex];
+        
+        if (isDeleting) {
+            elements.forEach(el => el.textContent = currentRole.substring(0, charIndex - 1));
+            charIndex--;
+        } else {
+            elements.forEach(el => el.textContent = currentRole.substring(0, charIndex + 1));
+            charIndex++;
+        }
+        
+        let typeSpeed = isDeleting ? erasingDelay : typingDelay;
+        
+        if (!isDeleting && charIndex === currentRole.length) {
+            typeSpeed = newRoleDelay;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+            typeSpeed = 500;
+        }
+        
+        setTimeout(type, typeSpeed);
+    }
+    
+    setTimeout(type, 1000);
+});
