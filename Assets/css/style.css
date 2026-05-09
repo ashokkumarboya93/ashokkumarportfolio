@@ -979,10 +979,10 @@ a.logo:hover .logo-text {
 .orb-ring::after {
     content: '';
     position: absolute;
-    inset: 4px;
+    inset: 2px;
     border-radius: 50%;
     border: 2px solid transparent;
-    box-shadow: 0 0 10px var(--orb-color, #4ade80), 0 0 25px var(--orb-color, #4ade80), inset 0 0 8px var(--orb-color, #4ade80);
+    box-shadow: 0 0 8px var(--orb-color, #4ade80), 0 0 18px var(--orb-color, #4ade80);
     opacity: 0;
     transition: opacity 1.8s ease;
     pointer-events: none;
@@ -1000,11 +1000,11 @@ a.logo:hover .logo-text {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 90px;
-    height: 90px;
+    width: 96px;
+    height: 96px;
     border-radius: 50%;
-    background: linear-gradient(145deg, #ffffff 0%, #f0f4f8 60%, #e4eaf0 100%);
-    border: 2.5px solid rgba(255,255,255,0.9);
+    background: linear-gradient(145deg, #ffffff 0%, #f4f6f9 60%, #eaeff4 100%);
+    border: 2px solid rgba(230,235,240,0.8);
     box-shadow:
         inset 0 -3px 6px rgba(0,0,0,0.05),
         inset 0 2px 4px rgba(255,255,255,0.9);
@@ -1108,7 +1108,7 @@ a.logo:hover .logo-text {
     .skills-orb-grid { gap: 22px; }
     .skill-orb { width: 110px; }
     .orb-ring { width: 95px; height: 95px; }
-    .orb-content { width: 72px; height: 72px; }
+    .orb-content { width: 76px; height: 76px; }
     .orb-logo { width: 30px; height: 30px; }
     .orb-percent { font-size: 0.65rem; }
     .orb-label { font-size: 0.72rem; }
