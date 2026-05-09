@@ -925,7 +925,8 @@ a.logo:hover .logo-text {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 36px;
+    padding: 10px 0;
 }
 
 /* Single Orb */
@@ -933,101 +934,157 @@ a.logo:hover .logo-text {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     cursor: default;
-    transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), filter 0.3s ease;
     position: relative;
-    width: 130px;
+    width: 140px;
 }
 .skill-orb:hover {
-    transform: translateY(-10px) scale(1.08);
+    transform: translateY(-12px) scale(1.1);
+    filter: brightness(1.05);
 }
 
 /* Orb ring container */
 .orb-ring {
     position: relative;
-    width: 110px;
-    height: 110px;
+    width: 120px;
+    height: 120px;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.08));
 }
 .orb-ring svg {
     width: 100%;
     height: 100%;
     transform: rotate(-90deg);
 }
+
+/* Track ring - visible gray */
 .orb-track {
     fill: none;
-    stroke: rgba(15,60,30,0.08);
-    stroke-width: 7;
+    stroke: #e8ecf0;
+    stroke-width: 8;
 }
+
+/* Filled progress ring - neon glow */
 .orb-fill {
     fill: none;
     stroke: var(--orb-color, #4ade80);
-    stroke-width: 7;
+    stroke-width: 8;
     stroke-linecap: round;
     stroke-dasharray: 339.292;
     stroke-dashoffset: 339.292;
-    transition: stroke-dashoffset 1.5s cubic-bezier(0.4,0,0.2,1);
-    filter: drop-shadow(0 0 6px var(--orb-color, #4ade80)) drop-shadow(0 0 14px var(--orb-color, #4ade80));
+    transition: stroke-dashoffset 1.8s cubic-bezier(0.4,0,0.2,1);
+    filter: drop-shadow(0 0 8px var(--orb-color, #4ade80))
+            drop-shadow(0 0 20px var(--orb-color, #4ade80))
+            drop-shadow(0 0 40px color-mix(in srgb, var(--orb-color, #4ade80) 40%, transparent));
 }
 .skill-orb.animated .orb-fill {
     stroke-dashoffset: var(--orb-offset, 0);
 }
 
-/* Glass inner circle */
+/* 3D Glass inner circle */
 .orb-content {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 86px;
-    height: 86px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.95);
-    border: 2px solid rgba(0,0,0,0.06);
-    box-shadow: inset 0 2px 8px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.06);
+    background: linear-gradient(145deg, #ffffff 0%, #f0f4f8 60%, #e4eaf0 100%);
+    border: 2.5px solid rgba(255,255,255,0.9);
+    box-shadow:
+        inset 0 -4px 8px rgba(0,0,0,0.06),
+        inset 0 2px 4px rgba(255,255,255,0.8),
+        0 6px 20px rgba(0,0,0,0.1),
+        0 2px 6px rgba(0,0,0,0.06);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2px;
+    gap: 3px;
     transition: box-shadow 0.3s ease;
+    overflow: hidden;
 }
+
+/* Shimmer shine sweep across the orb */
+.orb-content::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(
+        105deg,
+        transparent 0%,
+        rgba(255,255,255,0) 40%,
+        rgba(255,255,255,0.6) 50%,
+        rgba(255,255,255,0) 60%,
+        transparent 100%
+    );
+    transform: skewX(-15deg);
+    animation: orbShimmer 4s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 2;
+}
+
+@keyframes orbShimmer {
+    0%, 100% { left: -60%; opacity: 0; }
+    15% { opacity: 1; }
+    50% { left: 120%; opacity: 0.6; }
+    51%, 99% { opacity: 0; left: 120%; }
+}
+
+/* Glow effect on hover */
 .skill-orb:hover .orb-content {
-    box-shadow: inset 0 2px 8px rgba(0,0,0,0.04), 0 4px 20px rgba(0,0,0,0.1), 0 0 20px var(--orb-glow, rgba(74,222,128,0.2));
+    box-shadow:
+        inset 0 -4px 8px rgba(0,0,0,0.06),
+        inset 0 2px 4px rgba(255,255,255,0.8),
+        0 8px 30px rgba(0,0,0,0.12),
+        0 0 25px var(--orb-glow, rgba(74,222,128,0.25)),
+        0 0 50px var(--orb-glow, rgba(74,222,128,0.12));
 }
 
 /* Logo inside orb */
 .orb-logo {
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
     object-fit: contain;
-    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
+    position: relative;
+    z-index: 1;
 }
 .orb-icon {
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
     stroke: var(--orb-color, #4ade80);
     stroke-width: 2;
     fill: none;
+    position: relative;
+    z-index: 1;
 }
 
-/* Percent text inside orb */
+/* Percent text inside orb - below the logo */
 .orb-percent {
     font-family: var(--font-primary);
-    font-size: 0.72rem;
-    font-weight: 700;
+    font-size: 0.75rem;
+    font-weight: 800;
     color: var(--text-dark);
-    opacity: 0.8;
+    letter-spacing: 0.02em;
+    position: relative;
+    z-index: 1;
 }
 
 /* Label below orb */
 .orb-label {
     font-family: var(--font-primary);
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: 0.82rem;
+    font-weight: 700;
     color: var(--text-dark);
     text-align: center;
     white-space: nowrap;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.04);
 }
 
 /* 3D Toon Title Style */
@@ -1043,15 +1100,16 @@ a.logo:hover .logo-text {
 }
 
 @media (max-width: 768px) {
-    .skills-orb-grid { gap: 20px; }
-    .skill-orb { width: 100px; }
-    .orb-ring { width: 90px; height: 90px; }
-    .orb-content { width: 68px; height: 68px; }
-    .orb-logo { width: 28px; height: 28px; }
+    .skills-orb-grid { gap: 22px; }
+    .skill-orb { width: 110px; }
+    .orb-ring { width: 95px; height: 95px; }
+    .orb-content { width: 72px; height: 72px; }
+    .orb-logo { width: 30px; height: 30px; }
     .orb-percent { font-size: 0.65rem; }
     .orb-label { font-size: 0.72rem; }
     .skill-category-title { font-size: 1.1rem; }
 }
+
 
 
 /* ============================================
