@@ -365,3 +365,57 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Theme Picker Dropdown Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const themePickerBtn = document.getElementById('themePickerBtn');
+    const themeDropdown = document.getElementById('themeDropdown');
+    const themeOptions = document.querySelectorAll('.theme-option');
+    const allThemes = ['', 'theme-blue', 'theme-black', 'theme-goldish-yellow', 'theme-pale-pink', 'theme-red', 'theme-purple'];
+
+    if(themePickerBtn && themeDropdown) {
+        themePickerBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isActive = themeDropdown.style.opacity === '1';
+            if (isActive) {
+                themeDropdown.style.opacity = '0';
+                themeDropdown.style.visibility = 'hidden';
+                themeDropdown.style.transform = 'translateY(-10px)';
+            } else {
+                themeDropdown.style.opacity = '1';
+                themeDropdown.style.visibility = 'visible';
+                themeDropdown.style.transform = 'translateY(0)';
+            }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!themePickerBtn.contains(e.target) && !themeDropdown.contains(e.target)) {
+                themeDropdown.style.opacity = '0';
+                themeDropdown.style.visibility = 'hidden';
+                themeDropdown.style.transform = 'translateY(-10px)';
+            }
+        });
+
+        themeOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const selectedTheme = option.getAttribute('data-theme');
+                
+                // Remove all themes
+                allThemes.forEach(t => {
+                    if (t) document.body.classList.remove(t);
+                });
+                
+                // Add selected theme
+                if (selectedTheme) {
+                    document.body.classList.add(selectedTheme);
+                }
+                
+                // Close dropdown
+                themeDropdown.style.opacity = '0';
+                themeDropdown.style.visibility = 'hidden';
+                themeDropdown.style.transform = 'translateY(-10px)';
+            });
+        });
+    }
+});
