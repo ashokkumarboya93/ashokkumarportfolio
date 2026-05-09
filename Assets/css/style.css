@@ -751,8 +751,8 @@ a.logo:hover .logo-text {
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: flex-start;
+    gap: 40px;
+    align-items: start;
 }
 
 .about-text p {
@@ -772,6 +772,10 @@ a.logo:hover .logo-text {
     border-left: 4px solid var(--green-primary);
     border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
     margin-top: 12px;
+}
+
+.education-cards {
+    margin-top: -10px;
 }
 
 /* Education Cards */
@@ -1983,8 +1987,8 @@ a.logo:hover .logo-text {
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
-    gap: 50px;
-    align-items: flex-start;
+    gap: 40px;
+    align-items: start;
 }
 
 .info-card {
