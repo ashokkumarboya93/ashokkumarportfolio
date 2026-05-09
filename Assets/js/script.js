@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ====== Scroll Reveal ====== */
     document.querySelectorAll('.section').forEach(s => {
         s.querySelectorAll(
-            '.section-header,.edu-card,.train-track,.carousel-card,.exp-tree-item,.cert-card,.extra-card,.info-card,.contact-form'
+            '.section-header,.edu-card,.skill-category,.carousel-card,.exp-tree-item,.cert-card,.extra-card,.info-card,.contact-form'
         ).forEach(el => el.classList.add('reveal'));
     });
 
@@ -282,28 +282,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ============================================================
-       Skills Animation Toggle (Static vs Train Mode)
+       Skill Orb Ring Animation
        ============================================================ */
-    const skillsAnimateBtn = document.getElementById('skillsAnimateBtn');
-    const trainTracksContainer = document.getElementById('trainTracks');
+    const skillOrbs = document.querySelectorAll('.skill-orb');
+    const circumference = 2 * Math.PI * 54; // r=54
 
-    if (skillsAnimateBtn && trainTracksContainer) {
-        skillsAnimateBtn.addEventListener('click', () => {
-            const isTrainMode = skillsAnimateBtn.classList.toggle('active');
-            
-            if (isTrainMode) {
-                trainTracksContainer.classList.remove('static-mode');
-            } else {
-                trainTracksContainer.classList.add('static-mode');
-            }
-            
-            // Update Toggle Button Text
-            const btnText = skillsAnimateBtn.querySelector('.btn-text');
-            if (btnText) {
-                btnText.textContent = isTrainMode ? 'Train: ON' : 'Train Mode';
+    skillOrbs.forEach(orb => {
+        const percent = parseInt(orb.dataset.percent) || 0;
+        const color = orb.dataset.color || '#4ade80';
+        const offset = circumference - (percent / 100) * circumference;
+        const fill = orb.querySelector('.orb-fill');
+        if (fill) {
+            fill.style.setProperty('--orb-color', color);
+            fill.style.stroke = color;
+        }
+        orb.style.setProperty('--orb-color', color);
+        orb.style.setProperty('--orb-glow', color + '33');
+        orb.style.setProperty('--orb-offset', offset);
+    });
+
+    const orbObserver = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('animated');
+                orbObserver.unobserve(e.target);
             }
         });
-    }
+    }, { threshold: 0.3 });
+
+    skillOrbs.forEach(orb => orbObserver.observe(orb));
 
     /* ====== Contact Form Handler ====== */
     const contactForm = document.getElementById('contactForm');

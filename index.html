@@ -193,372 +193,163 @@
         </div>
     </section>
 
-    <!-- ========== SKILLS SECTION - Train Animation ========== -->
-        <div class="container relative-pos">
+    <!-- ========== SKILLS SECTION ========== -->
+    <section id="skills" class="section skills-section">
+        <div class="container">
             <div class="section-header centered">
-                <h2 class="section-title">Skills & <span class="gradient-text">Technologies</span></h2>
-                <p class="section-subtitle">My tech stack — always moving, always growing</p>
+                <h2 class="section-title toon-3d-title">Skills & <span class="gradient-text">Technologies</span></h2>
+                <p class="section-subtitle">My tech stack — proficiency at a glance</p>
             </div>
 
-            <!-- Animation Toggle Button -->
-            <div class="skills-controls">
-                <button id="skillsAnimateBtn" class="animate-toggle-btn" title="Toggle Train Mode">
-                    <span class="btn-icon">
-                        <i data-lucide="play" class="play-icon"></i>
-                        <i data-lucide="pause" class="pause-icon"></i>
-                    </span>
-                    <span class="btn-text">Train Mode</span>
-                </button>
-            </div>
-        </div>
-
-        <!-- Train Tracks - Default to static-mode -->
-        <div class="train-tracks static-mode" id="trainTracks">
-            <!-- Track 1 — Languages & Core -->
-            <div class="train-track track-speed-1">
-                <div class="train-bogies">
-                    <div class="bogie train-engine accent-blue">
-                        <span>Languages & Core</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
+            <!-- Languages & Core -->
+            <div class="skill-category">
+                <h3 class="skill-category-title accent-blue-text">Languages & Core</h3>
+                <div class="skills-orb-grid">
+                    <div class="skill-orb" data-percent="85" data-color="#3b82f6">
+                        <div class="orb-ring"><svg viewBox="0 0 120 120"><circle class="orb-track" cx="60" cy="60" r="54"/><circle class="orb-fill" cx="60" cy="60" r="54"/></svg></div>
+                        <div class="orb-content"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" class="orb-logo"><span class="orb-percent">85%</span></div>
+                        <span class="orb-label">Java</span>
                     </div>
-                    <div class="bogie accent-blue">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" class="bogie-logo"><span>Java</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
+                    <div class="skill-orb" data-percent="80" data-color="#3b82f6">
+                        <div class="orb-ring"><svg viewBox="0 0 120 120"><circle class="orb-track" cx="60" cy="60" r="54"/><circle class="orb-fill" cx="60" cy="60" r="54"/></svg></div>
+                        <div class="orb-content"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="orb-logo"><span class="orb-percent">80%</span></div>
+                        <span class="orb-label">Python</span>
                     </div>
-                    <div class="bogie accent-blue">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="bogie-logo"><span>Python</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
+                    <div class="skill-orb" data-percent="90" data-color="#3b82f6">
+                        <div class="orb-ring"><svg viewBox="0 0 120 120"><circle class="orb-track" cx="60" cy="60" r="54"/><circle class="orb-fill" cx="60" cy="60" r="54"/></svg></div>
+                        <div class="orb-content"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML" class="orb-logo"><span class="orb-percent">90%</span></div>
+                        <span class="orb-label">HTML5</span>
                     </div>
-                    <div class="bogie accent-blue">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML" class="bogie-logo"><span>HTML5</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
+                    <div class="skill-orb" data-percent="85" data-color="#3b82f6">
+                        <div class="orb-ring"><svg viewBox="0 0 120 120"><circle class="orb-track" cx="60" cy="60" r="54"/><circle class="orb-fill" cx="60" cy="60" r="54"/></svg></div>
+                        <div class="orb-content"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS" class="orb-logo"><span class="orb-percent">85%</span></div>
+                        <span class="orb-label">CSS3</span>
                     </div>
-                    <div class="bogie accent-blue">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS" class="bogie-logo"><span>CSS3</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
+                    <div class="skill-orb" data-percent="75" data-color="#3b82f6">
+                        <div class="orb-ring"><svg viewBox="0 0 120 120"><circle class="orb-track" cx="60" cy="60" r="54"/><circle class="orb-fill" cx="60" cy="60" r="54"/></svg></div>
+                        <div class="orb-content"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JS" class="orb-logo"><span class="orb-percent">75%</span></div>
+                        <span class="orb-label">JavaScript</span>
                     </div>
-                    <div class="bogie accent-blue">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JS" class="bogie-logo"><span>JavaScript</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-blue">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" class="bogie-logo"><span>SQL</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                </div>
-                <!-- Duplicate for marquee -->
-                <div class="train-bogies marquee-duplicate" aria-hidden="true">
-                    <div class="bogie train-engine accent-blue">
-                        <span>Languages & Core</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-blue">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" class="bogie-logo"><span>Java</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-blue">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="bogie-logo"><span>Python</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-blue">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML" class="bogie-logo"><span>HTML5</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-blue">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS" class="bogie-logo"><span>CSS3</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-blue">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JS" class="bogie-logo"><span>JavaScript</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-blue">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" class="bogie-logo"><span>SQL</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
+                    <div class="skill-orb" data-percent="80" data-color="#3b82f6">
+                        <div class="orb-ring"><svg viewBox="0 0 120 120"><circle class="orb-track" cx="60" cy="60" r="54"/><circle class="orb-fill" cx="60" cy="60" r="54"/></svg></div>
+                        <div class="orb-content"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" class="orb-logo"><span class="orb-percent">80%</span></div>
+                        <span class="orb-label">SQL</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Track 2 — AI / ML -->
-            <div class="train-track track-speed-2 track-reverse">
-                <div class="train-bogies">
-                    <div class="bogie train-engine accent-purple">
-                        <span>AI / ML / Data Science</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
+            <!-- AI / ML / Data Science -->
+            <div class="skill-category">
+                <h3 class="skill-category-title accent-purple-text">AI / ML / Data Science</h3>
+                <div class="skills-orb-grid">
+                    <div class="skill-orb" data-percent="75" data-color="#8b5cf6">
+                        <div class="orb-ring"><svg viewBox="0 0 120 120"><circle class="orb-track" cx="60" cy="60" r="54"/><circle class="orb-fill" cx="60" cy="60" r="54"/></svg></div>
+                        <div class="orb-content"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt="TF" class="orb-logo"><span class="orb-percent">75%</span></div>
+                        <span class="orb-label">TensorFlow</span>
                     </div>
-                    <div class="bogie accent-purple">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt="TF" class="bogie-logo"><span>TensorFlow</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
+                    <div class="skill-orb" data-percent="70" data-color="#8b5cf6">
+                        <div class="orb-ring"><svg viewBox="0 0 120 120"><circle class="orb-track" cx="60" cy="60" r="54"/><circle class="orb-fill" cx="60" cy="60" r="54"/></svg></div>
+                        <div class="orb-content"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="PyTorch" class="orb-logo"><span class="orb-percent">70%</span></div>
+                        <span class="orb-label">PyTorch</span>
                     </div>
-                    <div class="bogie accent-purple">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="PyTorch" class="bogie-logo"><span>PyTorch</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
+                    <div class="skill-orb" data-percent="80" data-color="#8b5cf6">
+                        <div class="orb-ring"><svg viewBox="0 0 120 120"><circle class="orb-track" cx="60" cy="60" r="54"/><circle class="orb-fill" cx="60" cy="60" r="54"/></svg></div>
+                        <div class="orb-content"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" alt="sklearn" class="orb-logo"><span class="orb-percent">80%</span></div>
+                        <span class="orb-label">Scikit-learn</span>
                     </div>
-                    <div class="bogie accent-purple">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" alt="sklearn" class="bogie-logo"><span>Scikit-learn</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
+                    <div class="skill-orb" data-percent="70" data-color="#8b5cf6">
+                        <div class="orb-ring"><svg viewBox="0 0 120 120"><circle class="orb-track" cx="60" cy="60" r="54"/><circle class="orb-fill" cx="60" cy="60" r="54"/></svg></div>
+                        <div class="orb-content"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/keras/keras-original.svg" alt="Keras" class="orb-logo"><span class="orb-percent">70%</span></div>
+                        <span class="orb-label">Keras</span>
                     </div>
-                    <div class="bogie accent-purple">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/keras/keras-original.svg" alt="Keras" class="bogie-logo"><span>Keras</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-purple">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" alt="OpenCV" class="bogie-logo"><span>OpenCV</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-purple">
-                        <i data-lucide="bar-chart-2" class="bogie-icon"></i><span>Data Analysis</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-purple">
-                        <i data-lucide="settings" class="bogie-icon"></i><span>Feature Eng.</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                </div>
-                <div class="train-bogies marquee-duplicate" aria-hidden="true">
-                    <div class="bogie train-engine accent-purple">
-                        <span>AI / ML / Data Science</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-purple">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt="TF" class="bogie-logo"><span>TensorFlow</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-purple">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="PyTorch" class="bogie-logo"><span>PyTorch</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-purple">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" alt="sklearn" class="bogie-logo"><span>Scikit-learn</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-purple">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/keras/keras-original.svg" alt="Keras" class="bogie-logo"><span>Keras</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-purple">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" alt="OpenCV" class="bogie-logo"><span>OpenCV</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-purple">
-                        <i data-lucide="bar-chart-2" class="bogie-icon"></i><span>Data Analysis</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-purple">
-                        <i data-lucide="settings" class="bogie-icon"></i><span>Feature Eng.</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
+                    <div class="skill-orb" data-percent="75" data-color="#8b5cf6">
+                        <div class="orb-ring"><svg viewBox="0 0 120 120"><circle class="orb-track" cx="60" cy="60" r="54"/><circle class="orb-fill" cx="60" cy="60" r="54"/></svg></div>
+                        <div class="orb-content"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" alt="OpenCV" class="orb-logo"><span class="orb-percent">75%</span></div>
+                        <span class="orb-label">OpenCV</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Track 3 — Cloud & DevOps -->
-            <div class="train-track track-speed-3">
-                <div class="train-bogies">
-                    <div class="bogie train-engine accent-teal">
-                        <span>Cloud & DevOps</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
+            <!-- Cloud & DevOps -->
+            <div class="skill-category">
+                <h3 class="skill-category-title accent-teal-text">Cloud & DevOps</h3>
+                <div class="skills-orb-grid">
+                    <div class="skill-orb" data-percent="80" data-color="#14b8a6">
+                        <div class="orb-ring"><svg viewBox="0 0 120 120"><circle class="orb-track" cx="60" cy="60" r="54"/><circle class="orb-fill" cx="60" cy="60" r="54"/></svg></div>
+                        <div class="orb-content"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="orb-logo"><span class="orb-percent">80%</span></div>
+                        <span class="orb-label">AWS</span>
                     </div>
-                    <div class="bogie accent-teal">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="bogie-logo"><span>AWS Cloud</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
+                    <div class="skill-orb" data-percent="85" data-color="#14b8a6">
+                        <div class="orb-ring"><svg viewBox="0 0 120 120"><circle class="orb-track" cx="60" cy="60" r="54"/><circle class="orb-fill" cx="60" cy="60" r="54"/></svg></div>
+                        <div class="orb-content"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" class="orb-logo"><span class="orb-percent">85%</span></div>
+                        <span class="orb-label">Git</span>
                     </div>
-                    <div class="bogie accent-teal">
-                        <i data-lucide="cloud" class="bogie-icon"></i><span>EC2 / VPC</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-teal">
-                        <i data-lucide="hard-drive" class="bogie-icon"></i><span>S3 / IAM</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-teal">
-                        <i data-lucide="activity" class="bogie-icon"></i><span>CloudWatch</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-teal">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" class="bogie-logo"><span>Git</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-teal">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" class="bogie-logo github-logo"><span>GitHub</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-teal">
-                        <i data-lucide="rocket" class="bogie-icon"></i><span>CI/CD</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                </div>
-                <div class="train-bogies marquee-duplicate" aria-hidden="true">
-                    <div class="bogie train-engine accent-teal">
-                        <span>Cloud & DevOps</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-teal">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="bogie-logo"><span>AWS Cloud</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-teal">
-                        <i data-lucide="cloud" class="bogie-icon"></i><span>EC2 / VPC</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-teal">
-                        <i data-lucide="hard-drive" class="bogie-icon"></i><span>S3 / IAM</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-teal">
-                        <i data-lucide="activity" class="bogie-icon"></i><span>CloudWatch</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-teal">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" class="bogie-logo"><span>Git</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-teal">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" class="bogie-logo github-logo"><span>GitHub</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-teal">
-                        <i data-lucide="rocket" class="bogie-icon"></i><span>CI/CD</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
+                    <div class="skill-orb" data-percent="85" data-color="#14b8a6">
+                        <div class="orb-ring"><svg viewBox="0 0 120 120"><circle class="orb-track" cx="60" cy="60" r="54"/><circle class="orb-fill" cx="60" cy="60" r="54"/></svg></div>
+                        <div class="orb-content"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" class="orb-logo github-logo"><span class="orb-percent">85%</span></div>
+                        <span class="orb-label">GitHub</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Track 4 — Tools -->
-            <div class="train-track track-speed-4 track-reverse">
-                <div class="train-bogies">
-                    <div class="bogie train-engine accent-orange">
-                        <span>Tools & Frameworks</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
+            <!-- Tools & Frameworks -->
+            <div class="skill-category">
+                <h3 class="skill-category-title accent-orange-text">Tools & Frameworks</h3>
+                <div class="skills-orb-grid">
+                    <div class="skill-orb" data-percent="80" data-color="#f59e0b">
+                        <div class="orb-ring"><svg viewBox="0 0 120 120"><circle class="orb-track" cx="60" cy="60" r="54"/><circle class="orb-fill" cx="60" cy="60" r="54"/></svg></div>
+                        <div class="orb-content"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg" alt="Flask" class="orb-logo"><span class="orb-percent">80%</span></div>
+                        <span class="orb-label">Flask</span>
                     </div>
-                    <div class="bogie accent-orange">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg" alt="Flask" class="bogie-logo"><span>Flask</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
+                    <div class="skill-orb" data-percent="75" data-color="#f59e0b">
+                        <div class="orb-ring"><svg viewBox="0 0 120 120"><circle class="orb-track" cx="60" cy="60" r="54"/><circle class="orb-fill" cx="60" cy="60" r="54"/></svg></div>
+                        <div class="orb-content"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/streamlit/streamlit-original.svg" alt="Streamlit" class="orb-logo"><span class="orb-percent">75%</span></div>
+                        <span class="orb-label">Streamlit</span>
                     </div>
-                    <div class="bogie accent-orange">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/streamlit/streamlit-original.svg" alt="Streamlit" class="bogie-logo"><span>Streamlit</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
+                    <div class="skill-orb" data-percent="70" data-color="#f59e0b">
+                        <div class="orb-ring"><svg viewBox="0 0 120 120"><circle class="orb-track" cx="60" cy="60" r="54"/><circle class="orb-fill" cx="60" cy="60" r="54"/></svg></div>
+                        <div class="orb-content"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg" alt="Jupyter" class="orb-logo"><span class="orb-percent">70%</span></div>
+                        <span class="orb-label">Jupyter</span>
                     </div>
-                    <div class="bogie accent-orange">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg" alt="Jupyter" class="bogie-logo"><span>Jupyter</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
+                    <div class="skill-orb" data-percent="85" data-color="#f59e0b">
+                        <div class="orb-ring"><svg viewBox="0 0 120 120"><circle class="orb-track" cx="60" cy="60" r="54"/><circle class="orb-fill" cx="60" cy="60" r="54"/></svg></div>
+                        <div class="orb-content"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VSCode" class="orb-logo"><span class="orb-percent">85%</span></div>
+                        <span class="orb-label">VS Code</span>
                     </div>
-                    <div class="bogie accent-orange">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VSCode" class="bogie-logo"><span>VS Code</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-orange">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" class="bogie-logo"><span>MySQL</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-orange">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/plotly/plotly-original.svg" alt="Plotly" class="bogie-logo"><span>Plotly</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-orange">
-                        <i data-lucide="monitor" class="bogie-icon"></i><span>Eclipse IDE</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                </div>
-                <div class="train-bogies marquee-duplicate" aria-hidden="true">
-                    <div class="bogie train-engine accent-orange">
-                        <span>Tools & Frameworks</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-orange">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg" alt="Flask" class="bogie-logo"><span>Flask</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-orange">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/streamlit/streamlit-original.svg" alt="Streamlit" class="bogie-logo"><span>Streamlit</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-orange">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg" alt="Jupyter" class="bogie-logo"><span>Jupyter</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-orange">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VSCode" class="bogie-logo"><span>VS Code</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-orange">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" class="bogie-logo"><span>MySQL</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-orange">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/plotly/plotly-original.svg" alt="Plotly" class="bogie-logo"><span>Plotly</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-orange">
-                        <i data-lucide="monitor" class="bogie-icon"></i><span>Eclipse IDE</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
+                    <div class="skill-orb" data-percent="80" data-color="#f59e0b">
+                        <div class="orb-ring"><svg viewBox="0 0 120 120"><circle class="orb-track" cx="60" cy="60" r="54"/><circle class="orb-fill" cx="60" cy="60" r="54"/></svg></div>
+                        <div class="orb-content"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" class="orb-logo"><span class="orb-percent">80%</span></div>
+                        <span class="orb-label">MySQL</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Track 5 — Soft Skills -->
-            <div class="train-track track-speed-5">
-                <div class="train-bogies">
-                    <div class="bogie train-engine accent-pink">
-                        <span>Soft Skills</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
+            <!-- Soft Skills -->
+            <div class="skill-category">
+                <h3 class="skill-category-title accent-pink-text">Soft Skills</h3>
+                <div class="skills-orb-grid">
+                    <div class="skill-orb" data-percent="90" data-color="#ec4899">
+                        <div class="orb-ring"><svg viewBox="0 0 120 120"><circle class="orb-track" cx="60" cy="60" r="54"/><circle class="orb-fill" cx="60" cy="60" r="54"/></svg></div>
+                        <div class="orb-content"><i data-lucide="puzzle" class="orb-icon"></i><span class="orb-percent">90%</span></div>
+                        <span class="orb-label">Problem Solving</span>
                     </div>
-                    <div class="bogie accent-pink">
-                        <i data-lucide="puzzle" class="bogie-icon"></i><span>Problem Solving</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
+                    <div class="skill-orb" data-percent="85" data-color="#ec4899">
+                        <div class="orb-ring"><svg viewBox="0 0 120 120"><circle class="orb-track" cx="60" cy="60" r="54"/><circle class="orb-fill" cx="60" cy="60" r="54"/></svg></div>
+                        <div class="orb-content"><i data-lucide="users" class="orb-icon"></i><span class="orb-percent">85%</span></div>
+                        <span class="orb-label">Teamwork</span>
                     </div>
-                    <div class="bogie accent-pink">
-                        <i data-lucide="scan" class="bogie-icon"></i><span>Analytical Thinking</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
+                    <div class="skill-orb" data-percent="85" data-color="#ec4899">
+                        <div class="orb-ring"><svg viewBox="0 0 120 120"><circle class="orb-track" cx="60" cy="60" r="54"/><circle class="orb-fill" cx="60" cy="60" r="54"/></svg></div>
+                        <div class="orb-content"><i data-lucide="message-circle" class="orb-icon"></i><span class="orb-percent">85%</span></div>
+                        <span class="orb-label">Communication</span>
                     </div>
-                    <div class="bogie accent-pink">
-                        <i data-lucide="users" class="bogie-icon"></i><span>Teamwork</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-pink">
-                        <i data-lucide="message-circle" class="bogie-icon"></i><span>Communication</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-pink">
-                        <i data-lucide="search" class="bogie-icon"></i><span>Research</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-pink">
-                        <i data-lucide="refresh-cw" class="bogie-icon"></i><span>Adaptability</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                </div>
-                <div class="train-bogies marquee-duplicate" aria-hidden="true">
-                    <div class="bogie train-engine accent-pink">
-                        <span>Soft Skills</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-pink">
-                        <i data-lucide="puzzle" class="bogie-icon"></i><span>Problem Solving</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-pink">
-                        <i data-lucide="scan" class="bogie-icon"></i><span>Analytical Thinking</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-pink">
-                        <i data-lucide="users" class="bogie-icon"></i><span>Teamwork</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-pink">
-                        <i data-lucide="message-circle" class="bogie-icon"></i><span>Communication</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-pink">
-                        <i data-lucide="search" class="bogie-icon"></i><span>Research</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
-                    </div>
-                    <div class="bogie accent-pink">
-                        <i data-lucide="refresh-cw" class="bogie-icon"></i><span>Adaptability</span>
-                        <div class="bogie-wheels"><div class="wheel"></div><div class="wheel"></div></div>
+                    <div class="skill-orb" data-percent="80" data-color="#ec4899">
+                        <div class="orb-ring"><svg viewBox="0 0 120 120"><circle class="orb-track" cx="60" cy="60" r="54"/><circle class="orb-fill" cx="60" cy="60" r="54"/></svg></div>
+                        <div class="orb-content"><i data-lucide="refresh-cw" class="orb-icon"></i><span class="orb-percent">80%</span></div>
+                        <span class="orb-label">Adaptability</span>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 
@@ -568,7 +359,7 @@
     <section id="projects" class="section projects-section">
         <div class="container">
             <div class="section-header centered">
-                <h2 class="section-title toon-title">Featured <span class="gradient-text">Projects</span></h2>
+                <h2 class="section-title toon-3d-title">Featured <span class="gradient-text">Projects</span></h2>
                 <p class="section-subtitle">Scroll through my work — swipe, click arrows, or use your mouse wheel</p>
             </div>
         </div>

@@ -875,7 +875,7 @@ a.logo:hover .logo-text {
 }
 
 /* ============================================
-   SKILLS SECTION - Train Bogie Marquee + Rain
+   SKILLS SECTION - Neon Orb Rings
    ============================================ */
 .skills-section {
     background: var(--bg-white);
@@ -884,686 +884,175 @@ a.logo:hover .logo-text {
     padding-bottom: 60px;
 }
 
-/* ---- Rain Effect ---- */
-.skills-rain {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    overflow: hidden;
+/* Skill Category */
+.skill-category {
+    margin-bottom: 50px;
 }
+.skill-category:last-child { margin-bottom: 0; }
 
-.rain-drop {
-    position: absolute;
-    width: 2px;
-    background: linear-gradient(to bottom, transparent, rgba(74, 222, 128, 0.25), transparent);
-    border-radius: 2px;
-    animation: rainFall linear infinite;
-}
-
-@keyframes rainFall {
-    0% {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-
-    10% {
-        opacity: 1;
-    }
-
-    90% {
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateY(100vh);
-        opacity: 0;
-    }
-}
-
-/* ---- Train Tracks Container ---- */
-/* ---- Skills Container ---- */
-.train-tracks {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    padding: 30px 0;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden; /* For marquee */
-}
-
-/* Static Mode: Grouped Titles and Grids */
-.train-tracks.static-mode {
-    overflow: visible;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-    gap: 40px;
-    padding: 30px;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-/* ---- Single Track ---- */
-/* ---- Single Track ---- */
-.train-track {
-    display: flex;
-    width: max-content;
-    position: relative;
-    padding-bottom: 25px; /* Space for wheels in marquee */
-}
-
-/* Marquee Animation logic */
-.train-tracks:not(.static-mode) .train-track {
-    animation: trainScroll 25s linear infinite;
-}
-
-.train-tracks:not(.static-mode) .train-track:hover {
-    animation-play-state: paused;
-}
-
-/* Static Mode Track Behavior - Grouped in a Centered Bordered Box */
-.train-tracks.static-mode .train-track {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center everything vertically */
-    width: 100%;
-    animation: none !important;
-    background: #ffffff;
-    border: 3px solid rgba(0, 0, 0, 0.05); /* Clear outer border */
-    border-radius: 24px;
-    padding: 35px 25px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.train-tracks.static-mode .train-track:hover {
-    transform: translateY(-8px);
-    border-color: var(--accent-color); /* We'll use specific accents below */
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-}
-
-/* Category Label - Visible only in static mode */
-.track-label {
-    display: none; /* Hidden during animation */
+.skill-category-title {
     font-family: var(--font-primary);
-    font-size: 0.75rem;
+    font-size: 1.4rem;
     font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--green-dark);
-    margin-bottom: 12px;
-    width: 100%;
-    border-left: 3px solid var(--green-primary);
-    padding-left: 10px;
-    opacity: 0.8;
-}
-
-.train-tracks.static-mode .track-label {
-    display: block;
-}
-
-/* Static Mode Track Behavior */
-.train-tracks.static-mode .train-track {
-    display: block; /* Stack label and bogies */
-    width: 100%;
-    animation: none !important;
-}
-
-.train-tracks.static-mode .train-reverse {
-    animation: none !important;
-}
-
-.track-speed-1 { animation-duration: 28s; }
-.track-speed-2 { animation-duration: 32s; }
-.track-speed-3 { animation-duration: 26s; }
-.track-speed-4 { animation-duration: 30s; }
-.track-speed-5 { animation-duration: 34s; }
-
-.track-reverse {
-    animation-direction: reverse;
-}
-
-@keyframes trainScroll {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-/* ---- Bogies Container ---- */
-/* ---- Bogies Container ---- */
-.train-bogies {
-    display: flex;
-    align-items: flex-end; /* Align to tracks/wheels */
-    gap: 0;
-    position: relative;
-}
-
-.train-tracks.static-mode .train-bogies {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 15px;
-    width: 100%;
-    padding: 0;
-    margin-top: 20px;
-    justify-content: center; /* Align the skill cards in the middle */
-}
-
-/* Hide marquee duplicates in static mode */
-.train-tracks.static-mode .marquee-duplicate {
-    display: none;
-}
-
-/* ---- Individual Bogie Box ---- */
-.bogie {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px 28px;
-    background: var(--bg-white);
-    border: 2px solid var(--bg-dark);
-    border-radius: 12px;
-    margin: 0 8px;
-    white-space: nowrap;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: var(--toon-shadow);
-    position: relative;
-    cursor: default;
-    z-index: 2;
-}
-
-/* Static Mode Bogie Adjustments */
-.train-tracks.static-mode .bogie {
-    margin: 0;
-    justify-content: center;
-    background: #ffffff;
-    border: 2px solid #eeeeee;
-    border-radius: 12px;
-    padding: 14px 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-}
-
-.train-tracks.static-mode .bogie:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-}
-
-/* ---- Train Engine (The Header / Leader) ---- */
-.train-engine {
-    min-width: 240px;
-    background: var(--bg-dark);
-    border: 2px solid var(--bg-dark);
-    color: #ffffff !important;
-    font-weight: 800;
-    font-size: 1.1rem;
-    padding-right: 45px;
-    border-radius: 16px 8px 12px 16px;
-    clip-path: polygon(0% 0%, 90% 0%, 100% 20%, 100% 100%, 0% 100%);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.train-engine span {
-    display: block;
-    width: 100%;
-    text-align: left;
-    /* Color will be overridden by mode-specific selectors */
-}
-
-/* Chimney for Engine */
-.train-engine::before {
-    content: '';
-    position: absolute;
-    top: -15px;
-    left: 20px;
-    width: 12px;
-    height: 18px;
-    background: var(--bg-dark); /* Fallback */
-    border-radius: 4px 4px 0 0;
-}
-
-/* Steam Animation */
-.train-tracks:not(.static-mode) .train-engine::after {
-    content: '☁';
-    position: absolute;
-    top: -25px;
-    left: 18px;
-    font-size: 1.2rem;
-    color: rgba(0,0,0,0.2);
-    animation: steamFloat 2s infinite ease-out;
-    opacity: 0;
-}
-
-@keyframes steamFloat {
-    0% { transform: translateY(0) scale(0.5); opacity: 0; }
-    50% { opacity: 0.6; }
-    100% { transform: translateY(-30px) scale(1.5); opacity: 0; }
-}
-
-/* Engine in Static Mode: Becomes a Clean Centered Inner Title */
-.train-tracks.static-mode .train-engine {
-    grid-column: 1 / -1; /* Critical: Span all columns to allow centering */
-    width: 100%;
-    min-width: 0;
-    margin: 0 0 20px 0;
-    clip-path: none;
-    border-radius: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center; /* Center Heading Horizontally */
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    position: relative;
-    z-index: 10;
-}
-
-.train-tracks.static-mode .train-engine span {
-    font-size: 1.6rem;
-    font-weight: 800;
-    line-height: 1.25;
-    display: inline-block;
-    padding: 5px 15px 12px 15px;
-    border-bottom: 5px solid #3b82f6; /* Accent color will override */
     text-align: center;
-    color: var(--text-dark);
-}
-
-.train-tracks.static-mode .train-engine .bogie-wheels,
-.train-tracks.static-mode .train-engine::after,
-.train-tracks.static-mode .train-engine::before {
-    display: none !important;
-}
-
-/* Accent colors for Engine titles in static mode (Centered Underline) */
-.train-tracks.static-mode .accent-blue.train-engine span { color: #3b82f6 !important; border-bottom-color: #3b82f6; }
-.train-tracks.static-mode .accent-purple.train-engine span { color: #8b5cf6 !important; border-bottom-color: #8b5cf6; }
-.train-tracks.static-mode .accent-teal.train-engine span { color: #14b8a6 !important; border-bottom-color: #14b8a6; }
-.train-tracks.static-mode .accent-orange.train-engine span { color: #f59e0b !important; border-bottom-color: #f59e0b; }
-.train-tracks.static-mode .accent-pink.train-engine span { color: #ec4899 !important; border-bottom-color: #ec4899; }
-
-/* ---- Individual Bogie (Skill Box) in Marquee ---- */
-.bogie {
-    background: #ffffff; /* Brighter background */
-    border: 2px solid var(--bg-dark); /* Visible outer border */
-    border-radius: 12px;
-    padding: 16px 28px;
-    margin: 0 10px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    white-space: nowrap;
+    margin-bottom: 30px;
+    letter-spacing: 0.02em;
     position: relative;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-/* Specific Pale Backgrounds and Colored Text for Train Engines (Marquee Mode) */
-.train-tracks:not(.static-mode) .accent-blue.train-engine { background: #eff6ff; border-color: #3b82f6; }
-.train-tracks:not(.static-mode) .accent-blue.train-engine span { color: #1d4ed8 !important; }
-.train-tracks:not(.static-mode) .accent-blue.train-engine::before { background: #3b82f6; }
-
-.train-tracks:not(.static-mode) .accent-purple.train-engine { background: #f5f3ff; border-color: #8b5cf6; }
-.train-tracks:not(.static-mode) .accent-purple.train-engine span { color: #6d28d9 !important; }
-.train-tracks:not(.static-mode) .accent-purple.train-engine::before { background: #8b5cf6; }
-
-.train-tracks:not(.static-mode) .accent-teal.train-engine { background: #f0fdfa; border-color: #14b8a6; }
-.train-tracks:not(.static-mode) .accent-teal.train-engine span { color: #0f766e !important; }
-.train-tracks:not(.static-mode) .accent-teal.train-engine::before { background: #14b8a6; }
-
-.train-tracks:not(.static-mode) .accent-orange.train-engine { background: #fffcf2; border-color: #f59e0b; }
-.train-tracks:not(.static-mode) .accent-orange.train-engine span { color: #b45309 !important; }
-.train-tracks:not(.static-mode) .accent-orange.train-engine::before { background: #f59e0b; }
-
-.train-tracks:not(.static-mode) .accent-pink.train-engine { background: #fdf2f8; border-color: #ec4899; }
-.train-tracks:not(.static-mode) .accent-pink.train-engine span { color: #be185d !important; }
-.train-tracks:not(.static-mode) .accent-pink.train-engine::before { background: #ec4899; }
-
-.train-tracks.static-mode .train-engine::before,
-.train-tracks.static-mode .train-engine::after {
-    display: none;
-}
-
-/* Connector chain between bogies */
-/* Connector chain between bogies - Only in marquee mode */
-.bogie::after {
-    content: '';
-    position: absolute;
-    right: -16px;
-    top: 50%;
-    transform: translateY(-51%);
-    width: 16px;
-    height: 4px;
-    background: var(--bg-dark);
-    border-radius: 2px;
-    z-index: 1;
-}
-
-.train-tracks.static-mode .bogie::after {
-    display: none;
-}
-
-.bogie:last-child::after {
-    display: none;
-}
-
-/* ---- Wheels System ---- */
-.bogie-wheels {
-    position: absolute;
-    bottom: -12px;
-    left: 0;
+    display: inline-block;
     width: 100%;
-    display: flex;
-    justify-content: space-around;
-    padding: 0 10px;
-    pointer-events: none;
 }
-
-.train-tracks.static-mode .bogie-wheels {
-    display: none;
-}
-
-.wheel {
-    width: 18px;
-    height: 18px;
-    background: #222;
-    border-radius: var(--radius-full);
-    border: 3px solid #444;
-    position: relative;
-}
-
-/* Wheel spokes/rim detail */
-.wheel::after {
+.skill-category-title::after {
     content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    border-radius: 4px;
+    margin: 10px auto 0;
+}
+.accent-blue-text { color: #3b82f6; }
+.accent-blue-text::after { background: #3b82f6; }
+.accent-purple-text { color: #8b5cf6; }
+.accent-purple-text::after { background: #8b5cf6; }
+.accent-teal-text { color: #14b8a6; }
+.accent-teal-text::after { background: #14b8a6; }
+.accent-orange-text { color: #f59e0b; }
+.accent-orange-text::after { background: #f59e0b; }
+.accent-pink-text { color: #ec4899; }
+.accent-pink-text::after { background: #ec4899; }
+
+/* Orb Grid */
+.skills-orb-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Single Orb */
+.skill-orb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: default;
+    transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    position: relative;
+    width: 130px;
+}
+.skill-orb:hover {
+    transform: translateY(-10px) scale(1.08);
+}
+
+/* Orb ring container */
+.orb-ring {
+    position: relative;
+    width: 110px;
+    height: 110px;
+}
+.orb-ring svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+.orb-track {
+    fill: none;
+    stroke: rgba(15,60,30,0.08);
+    stroke-width: 7;
+}
+.orb-fill {
+    fill: none;
+    stroke: var(--orb-color, #4ade80);
+    stroke-width: 7;
+    stroke-linecap: round;
+    stroke-dasharray: 339.292;
+    stroke-dashoffset: 339.292;
+    transition: stroke-dashoffset 1.5s cubic-bezier(0.4,0,0.2,1);
+    filter: drop-shadow(0 0 6px var(--orb-color, #4ade80)) drop-shadow(0 0 14px var(--orb-color, #4ade80));
+}
+.skill-orb.animated .orb-fill {
+    stroke-dashoffset: var(--orb-offset, 0);
+}
+
+/* Glass inner circle */
+.orb-content {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100%;
-    height: 2px;
-    background: #666;
     transform: translate(-50%, -50%);
+    width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.95);
+    border: 2px solid rgba(0,0,0,0.06);
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    transition: box-shadow 0.3s ease;
+}
+.skill-orb:hover .orb-content {
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.04), 0 4px 20px rgba(0,0,0,0.1), 0 0 20px var(--orb-glow, rgba(74,222,128,0.2));
 }
 
-/* Rotate wheels when train is moving */
-.train-tracks:not(.static-mode) .train-track:not(.paused) .wheel {
-    animation: rotateWheel 1.5s linear infinite;
-}
-
-.train-track.paused .wheel {
-    animation-play-state: paused !important;
-}
-
-.track-reverse .wheel {
-    animation-direction: reverse;
-}
-
-@keyframes rotateWheel {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-/* Bogie hover */
-.bogie:hover {
-    transform: translateY(-6px) scale(1.08);
-    box-shadow: var(--neon-green), var(--shadow-md);
-    border-color: var(--green-primary);
-    z-index: 5;
-}
-
-/* Bogie icon */
-.bogie-icon, .bogie-logo {
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
+/* Logo inside orb */
+.orb-logo {
+    width: 36px;
+    height: 36px;
     object-fit: contain;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
 }
-
-.bogie-icon {
-    stroke: var(--green-dark);
+.orb-icon {
+    width: 32px;
+    height: 32px;
+    stroke: var(--orb-color, #4ade80);
     stroke-width: 2;
     fill: none;
 }
 
-.github-logo {
-    filter: invert(1); /* Since it's a black SVG and we have white bg but let's see */
+/* Percent text inside orb */
+.orb-percent {
+    font-family: var(--font-primary);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    opacity: 0.8;
 }
 
-.bogie span {
+/* Label below orb */
+.orb-label {
     font-family: var(--font-primary);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: var(--text-dark);
+    text-align: center;
+    white-space: nowrap;
 }
 
-/* ---- Skills Controls & Animate Button ---- */
-.relative-pos {
-    position: relative;
-    z-index: 10;
-}
-
-.skills-controls {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-}
-
-.animate-toggle-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 18px;
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-    border: 2px solid var(--bg-dark);
-    border-radius: var(--radius-full);
-    cursor: pointer;
-    font-family: var(--font-primary);
-    font-weight: 700;
-    font-size: 0.85rem;
+/* 3D Toon Title Style */
+.toon-3d-title {
     color: var(--text-dark);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: var(--toon-shadow);
-}
-
-.animate-toggle-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--toon-shadow-hover);
-    border-color: var(--green-primary);
-}
-
-.animate-toggle-btn .btn-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.animate-toggle-btn .pause-icon { display: block; }
-.animate-toggle-btn .play-icon { display: none; }
-
-.animate-toggle-btn:not(.active) .pause-icon { display: none; }
-.animate-toggle-btn:not(.active) .play-icon { display: block; }
-
-.animate-toggle-btn.active {
-    background: var(--green-light);
-    border-color: var(--green-primary);
-}
-
-.animate-toggle-btn .lucide-icon {
-    width: 16px;
-    height: 16px;
-    stroke-width: 3;
-}
-
-@media (max-width: 900px) {
-    .train-tracks.static-mode {
-        grid-template-columns: 1fr;
-        padding: 15px;
-    }
+    text-shadow:
+        0 1px 0 rgba(74,222,128,0.4),
+        0 2px 0 rgba(74,222,128,0.3),
+        0 3px 0 rgba(74,222,128,0.2),
+        0 4px 8px rgba(15,60,30,0.1);
+    -webkit-text-stroke: 0.5px rgba(15,60,30,0.15);
+    paint-order: stroke fill;
 }
 
 @media (max-width: 768px) {
-    .skills-controls {
-        position: static;
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-        transform: none;
-    }
+    .skills-orb-grid { gap: 20px; }
+    .skill-orb { width: 100px; }
+    .orb-ring { width: 90px; height: 90px; }
+    .orb-content { width: 68px; height: 68px; }
+    .orb-logo { width: 28px; height: 28px; }
+    .orb-percent { font-size: 0.65rem; }
+    .orb-label { font-size: 0.72rem; }
+    .skill-category-title { font-size: 1.1rem; }
 }
 
-/* ---- Accent Color Variants ---- */
-/* Blue - Languages */
-.bogie.accent-blue {
-    border-color: #3b82f6;
-    background: rgba(59, 130, 246, 0.04);
-}
-.bogie.accent-blue:hover {
-    border-color: #3b82f6;
-    box-shadow: 0 0 8px rgba(59, 130, 246, 0.4), 0 0 20px rgba(59, 130, 246, 0.15), var(--shadow-md);
-}
-.bogie.accent-blue::after { background: #3b82f6; }
-
-/* Engine Accent - Blue (Static Mode Only) */
-.train-tracks.static-mode .accent-blue.train-engine {
-    background: transparent !important;
-}
-
-.train-tracks.static-mode .accent-blue.bogie {
-    border-color: rgba(59, 130, 246, 0.5);
-}
-
-/* Purple - AI/ML */
-.bogie.accent-purple {
-    border-color: var(--purple);
-    background: rgba(167, 139, 250, 0.04);
-}
-
-.bogie.accent-purple .bogie-icon {
-    stroke: var(--purple);
-}
-
-.bogie.accent-purple:hover {
-    border-color: var(--purple);
-    box-shadow: 0 0 8px rgba(167, 139, 250, 0.4), 0 0 20px rgba(167, 139, 250, 0.15), var(--shadow-md);
-}
-
-.bogie.accent-purple::after {
-    background: var(--purple);
-}
-
-/* Engine Accent - Purple (Static Mode Only) */
-.train-tracks.static-mode .accent-purple.train-engine {
-    background: linear-gradient(135deg, #6366f1, #a855f7); /* Vibrant Purple/Indigo */
-}
-
-.train-tracks.static-mode .train-track:has(.accent-purple) {
-    border-color: rgba(167, 139, 250, 0.3);
-}
-
-.train-tracks.static-mode .accent-purple.bogie {
-    border-color: rgba(167, 139, 250, 0.4);
-}
-
-/* Teal - Cloud */
-.bogie.accent-teal {
-    border-color: var(--teal);
-    background: rgba(45, 212, 191, 0.04);
-}
-
-.bogie.accent-teal .bogie-icon {
-    stroke: var(--teal);
-}
-
-.bogie.accent-teal:hover {
-    border-color: var(--teal);
-    box-shadow: 0 0 8px rgba(45, 212, 191, 0.4), 0 0 20px rgba(45, 212, 191, 0.15), var(--shadow-md);
-}
-
-.bogie.accent-teal::after {
-    background: var(--teal);
-}
-
-/* Engine Accent - Teal (Static Mode Only) */
-.train-tracks.static-mode .accent-teal.train-engine {
-    background: linear-gradient(135deg, #0ea5e9, #14b8a6); /* Vibrant Blue/Teal */
-}
-
-.train-tracks.static-mode .train-track:has(.accent-teal) {
-    border-color: rgba(45, 212, 191, 0.3);
-}
-
-.train-tracks.static-mode .accent-teal.bogie {
-    border-color: rgba(45, 212, 191, 0.4);
-}
-
-/* Orange - Frameworks */
-.bogie.accent-orange {
-    border-color: var(--yellow);
-    background: rgba(251, 191, 36, 0.04);
-}
-
-.bogie.accent-orange .bogie-icon {
-    stroke: #f59e0b;
-}
-
-.bogie.accent-orange:hover {
-    border-color: var(--yellow);
-    box-shadow: 0 0 8px rgba(251, 191, 36, 0.4), 0 0 20px rgba(251, 191, 36, 0.15), var(--shadow-md);
-}
-
-.bogie.accent-orange::after {
-    background: var(--orange);
-}
-
-/* Engine Accent - Orange (Static Mode Only) */
-.train-tracks.static-mode .accent-orange.train-engine {
-    background: linear-gradient(135deg, #f59e0b, #ea580c); /* Vibrant Orange/Amber */
-}
-
-.train-tracks.static-mode .train-track:has(.accent-orange) {
-    border-color: rgba(251, 146, 60, 0.3);
-}
-
-.train-tracks.static-mode .accent-orange.bogie {
-    border-color: rgba(251, 146, 60, 0.4);
-}
-
-/* Pink - Soft Skills */
-.bogie.accent-pink {
-    border-color: var(--coral);
-    background: rgba(251, 113, 133, 0.04);
-}
-
-.bogie.accent-pink .bogie-icon {
-    stroke: var(--coral);
-}
-
-.bogie.accent-pink:hover {
-    border-color: var(--coral);
-    box-shadow: 0 0 8px rgba(251, 113, 133, 0.4), 0 0 20px rgba(251, 113, 133, 0.15), var(--shadow-md);
-}
-
-.bogie.accent-pink::after {
-    background: var(--pink);
-}
-
-/* Engine Accent - Pink (Static Mode Only) */
-.train-tracks.static-mode .accent-pink.train-engine {
-    background: linear-gradient(135deg, #ec4899, #d946ef); /* Vibrant Pink/Fuchsia */
-}
-
-.train-tracks.static-mode .train-track:has(.accent-pink) {
-    border-color: rgba(244, 114, 182, 0.3);
-}
-
-.train-tracks.static-mode .accent-pink.bogie {
-    border-color: rgba(244, 114, 182, 0.4);
-}
 
 /* ============================================
    PROJECTS SECTION - Center-Focus Carousel
@@ -1586,11 +1075,11 @@ a.logo:hover .logo-text {
 /* --- Carousel Track --- */
 .carousel-track {
     display: flex;
-    gap: 28px;
+    gap: 20px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    padding: 40px calc(50% - 180px) 50px;
+    padding: 40px calc(50% - 190px) 50px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     align-items: center;
