@@ -1,0 +1,5 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'>
+    <rect width='200' height='100' fill='transparent'/>
+    <text x='100' y='50' font-family='Arial, sans-serif' font-weight='bold' font-size='32' fill='#1e293b' text-anchor='middle'>Campus</text>
+    <text x='100' y='85' font-family='monospace' font-weight='bold' font-size='36' fill='#4ade80' text-anchor='middle'>&lt;Code/&gt;</text>
+</svg>

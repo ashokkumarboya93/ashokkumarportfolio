@@ -2443,6 +2443,13 @@ a.logo:hover .logo-text {
     align-items: center;
 }
 
+.cert-logo-img {
+    height: 48px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
 .cert-title {
     font-family: var(--font-primary);
     font-size: 0.98rem;
