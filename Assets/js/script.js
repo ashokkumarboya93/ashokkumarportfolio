@@ -338,8 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const themes = [
         '', // Default (Green)
-        'theme-blue',
-        'theme-black',
+        'theme-sky-blue',
         'theme-goldish-yellow',
         'theme-pale-pink',
         'theme-red',
@@ -371,7 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const themePickerBtn = document.getElementById('themePickerBtn');
     const themeDropdown = document.getElementById('themeDropdown');
     const themeOptions = document.querySelectorAll('.theme-option');
-    const allThemes = ['', 'theme-blue', 'theme-black', 'theme-goldish-yellow', 'theme-pale-pink', 'theme-red', 'theme-purple'];
+    const allThemes = ['', 'theme-sky-blue', 'theme-goldish-yellow', 'theme-pale-pink', 'theme-red', 'theme-purple'];
 
     if(themePickerBtn && themeDropdown) {
         themePickerBtn.addEventListener('click', (e) => {
@@ -419,3 +418,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+

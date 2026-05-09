@@ -3296,68 +3296,38 @@ a.info-value:hover {
    THEMES (Triggered by Logo Click)
    ============================================ */
 
-/* Blue Theme (Bright) */
-body.theme-blue {
+/* Sky Blue Theme (Bright) */
+body.theme-sky-blue {
     --bg-white: #ffffff;
     --bg-light: #f0f9ff;
     --bg-section: #e0f2fe;
     --bg-card: #ffffff;
-    --bg-dark: #1e3a8a;
-    --bg-darker: #172554;
+    --bg-dark: #075985;
+    --bg-darker: #082f49;
     
-    --text-dark: #1e3a8a;
-    --text-body: #1e40af;
-    --text-secondary: #2563eb;
-    --text-muted: #3b82f6;
+    --text-dark: #075985;
+    --text-body: #0369a1;
+    --text-secondary: #0284c7;
+    --text-muted: #0ea5e9;
     --text-white: #ffffff;
     
-    --green-primary: #3b82f6;
-    --green-dark: #1d4ed8;
-    --green-darker: #1e3a8a;
-    --green-light: #eff6ff;
-    --green-glow: rgba(59, 130, 246, 0.15);
+    --green-primary: #0ea5e9;
+    --green-dark: #0284c7;
+    --green-darker: #0369a1;
+    --green-light: #e0f2fe;
+    --green-glow: rgba(14, 165, 233, 0.15);
     
-    --toon-shadow: 4px 4px 0px rgba(30, 58, 138, 0.1);
-    --toon-shadow-hover: 6px 6px 0px rgba(59, 130, 246, 0.2);
-    --gradient-green: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 100%);
-    --gradient-hero: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 50%, #8b5cf6 100%);
-    --gradient-card: linear-gradient(180deg, rgba(59, 130, 246, 0.04) 0%, transparent 100%);
+    --toon-shadow: 4px 4px 0px rgba(7, 89, 133, 0.1);
+    --toon-shadow-hover: 6px 6px 0px rgba(14, 165, 233, 0.2);
+    --gradient-green: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+    --gradient-hero: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 50%, #818cf8 100%);
+    --gradient-card: linear-gradient(180deg, rgba(14, 165, 233, 0.04) 0%, transparent 100%);
     
     --nav-bg-color: rgba(255, 255, 255, 0.12);
     --nav-bg-scrolled: rgba(255, 255, 255, 0.95);
 }
 
-/* Black Theme (Bright) */
-body.theme-black {
-    --bg-white: #ffffff;
-    --bg-light: #f9fafb;
-    --bg-section: #f3f4f6;
-    --bg-card: #ffffff;
-    --bg-dark: #111111;
-    --bg-darker: #000000;
-    
-    --text-dark: #000000;
-    --text-body: #374151;
-    --text-secondary: #4b5563;
-    --text-muted: #6b7280;
-    --text-white: #ffffff;
-    
-    --green-primary: #333333;
-    --green-dark: #111111;
-    --green-darker: #000000;
-    --green-light: #f3f4f6;
-    --green-glow: rgba(0, 0, 0, 0.1);
-    
-    --toon-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
-    --toon-shadow-hover: 6px 6px 0px rgba(0, 0, 0, 0.2);
-    --gradient-green: linear-gradient(135deg, #555555 0%, #222222 100%);
-    --gradient-dark: linear-gradient(135deg, #111111 0%, #000000 100%);
-    --gradient-hero: linear-gradient(135deg, #666666 0%, #333333 50%, #000000 100%);
-    --gradient-card: linear-gradient(180deg, rgba(0, 0, 0, 0.03) 0%, transparent 100%);
-    
-    --nav-bg-color: rgba(255, 255, 255, 0.12);
-    --nav-bg-scrolled: rgba(255, 255, 255, 0.95);
-}
+
 
 /* Goldish Yellow Theme (Bright) */
 body.theme-goldish-yellow {
