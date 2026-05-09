@@ -778,6 +778,111 @@ a.logo:hover .logo-text {
     margin-top: -10px;
 }
 
+
+/* About Tech Animation */
+.about-tech-anim {
+    margin-top: 30px;
+    position: relative;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Floating code symbols */
+.floating-code {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.code-symbol {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family: var(--font-primary);
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--green-primary);
+    opacity: 0.5;
+    animation: floatSymbol 5s ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+}
+
+@keyframes floatSymbol {
+    0%, 100% { transform: translate(var(--x, 0), var(--y, 0)) scale(1); opacity: 0.3; }
+    50% { transform: translate(calc(var(--x, 0) * -1), calc(var(--y, 0) * -1)) scale(1.2); opacity: 0.7; }
+}
+
+/* Laptop animation */
+.anim-laptop {
+    position: relative;
+    z-index: 1;
+}
+
+.laptop-screen {
+    width: 180px;
+    padding: 16px;
+    background: var(--bg-dark);
+    border-radius: 10px 10px 0 0;
+    border: 2.5px solid var(--bg-dark);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    box-shadow: 0 -4px 20px rgba(74, 222, 128, 0.1);
+}
+
+.code-line {
+    height: 4px;
+    background: rgba(74, 222, 128, 0.25);
+    border-radius: 2px;
+    animation: codePulse 3s ease-in-out infinite;
+}
+
+.code-line.accent {
+    background: rgba(74, 222, 128, 0.5);
+}
+
+.code-line:nth-child(2) { animation-delay: 0.4s; }
+.code-line:nth-child(3) { animation-delay: 0.8s; }
+.code-line:nth-child(4) { animation-delay: 1.2s; }
+.code-line:nth-child(5) { animation-delay: 1.6s; }
+
+@keyframes codePulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.cursor-blink {
+    width: 8px;
+    height: 12px;
+    background: var(--green-primary);
+    border-radius: 1px;
+    animation: blink 1s step-end infinite;
+    margin-top: 2px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.laptop-base {
+    width: 210px;
+    height: 10px;
+    background: var(--bg-dark);
+    border-radius: 0 0 4px 4px;
+    margin: 0 auto;
+    position: relative;
+    left: -15px;
+}
+
+@media (max-width: 768px) {
+    .about-tech-anim { height: 160px; margin-top: 20px; }
+    .laptop-screen { width: 140px; padding: 12px; }
+    .laptop-base { width: 170px; }
+}
+
 /* Education Cards */
 .edu-card {
     padding: 28px;
