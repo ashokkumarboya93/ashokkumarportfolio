@@ -3290,3 +3290,113 @@ a.info-value:hover {
     background: var(--green-primary);
     border-radius: 4px;
 }
+/* ============================================
+   THEMES (Triggered by Logo Click)
+   ============================================ */
+/* Blue Theme */
+body.theme-blue {
+    --bg-dark: #0f172a;
+    --bg-darker: #020617;
+    --text-dark: #0f172a;
+    --text-body: #1e293b;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
+    --green-primary: #3b82f6;
+    --green-dark: #1d4ed8;
+    --green-darker: #1e3a8a;
+    --green-light: #eff6ff;
+    --green-glow: rgba(59, 130, 246, 0.15);
+    --gradient-green: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 100%);
+    --gradient-hero: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 50%, #8b5cf6 100%);
+    --toon-shadow-hover: 6px 6px 0px rgba(59, 130, 246, 0.2);
+}
+
+/* Black Theme */
+body.theme-black {
+    --bg-dark: #111111;
+    --bg-darker: #000000;
+    --text-dark: #000000;
+    --text-body: #222222;
+    --text-secondary: #444444;
+    --text-muted: #666666;
+    --green-primary: #333333;
+    --green-dark: #000000;
+    --green-darker: #000000;
+    --green-light: #f5f5f5;
+    --green-glow: rgba(0, 0, 0, 0.15);
+    --gradient-green: linear-gradient(135deg, #555555 0%, #222222 100%);
+    --gradient-hero: linear-gradient(135deg, #666666 0%, #333333 50%, #000000 100%);
+    --toon-shadow-hover: 6px 6px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Goldish Yellow Theme */
+body.theme-goldish-yellow {
+    --bg-dark: #451a03;
+    --bg-darker: #290f02;
+    --text-dark: #451a03;
+    --text-body: #78350f;
+    --text-secondary: #92400e;
+    --text-muted: #b45309;
+    --green-primary: #f59e0b;
+    --green-dark: #b45309;
+    --green-darker: #78350f;
+    --green-light: #fffbeb;
+    --green-glow: rgba(245, 158, 11, 0.15);
+    --gradient-green: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+    --gradient-hero: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #ea580c 100%);
+    --toon-shadow-hover: 6px 6px 0px rgba(245, 158, 11, 0.2);
+}
+
+/* Pale Pink Theme */
+body.theme-pale-pink {
+    --bg-dark: #831843;
+    --bg-darker: #500f29;
+    --text-dark: #831843;
+    --text-body: #9d174d;
+    --text-secondary: #be185d;
+    --text-muted: #db2777;
+    --green-primary: #f472b6;
+    --green-dark: #be185d;
+    --green-darker: #831843;
+    --green-light: #fdf2f8;
+    --green-glow: rgba(244, 114, 182, 0.15);
+    --gradient-green: linear-gradient(135deg, #f472b6 0%, #fb7185 100%);
+    --gradient-hero: linear-gradient(135deg, #f472b6 0%, #fb7185 50%, #e11d48 100%);
+    --toon-shadow-hover: 6px 6px 0px rgba(244, 114, 182, 0.2);
+}
+
+/* Red Theme */
+body.theme-red {
+    --bg-dark: #450a0a;
+    --bg-darker: #2a0606;
+    --text-dark: #450a0a;
+    --text-body: #7f1d1d;
+    --text-secondary: #991b1b;
+    --text-muted: #b91c1c;
+    --green-primary: #ef4444;
+    --green-dark: #b91c1c;
+    --green-darker: #7f1d1d;
+    --green-light: #fef2f2;
+    --green-glow: rgba(239, 68, 68, 0.15);
+    --gradient-green: linear-gradient(135deg, #ef4444 0%, #f87171 100%);
+    --gradient-hero: linear-gradient(135deg, #ef4444 0%, #f87171 50%, #dc2626 100%);
+    --toon-shadow-hover: 6px 6px 0px rgba(239, 68, 68, 0.2);
+}
+
+/* Purple Theme */
+body.theme-purple {
+    --bg-dark: #3b0764;
+    --bg-darker: #22043a;
+    --text-dark: #3b0764;
+    --text-body: #581c87;
+    --text-secondary: #6b21a8;
+    --text-muted: #7e22ce;
+    --green-primary: #a855f7;
+    --green-dark: #7e22ce;
+    --green-darker: #581c87;
+    --green-light: #faf5ff;
+    --green-glow: rgba(168, 85, 247, 0.15);
+    --gradient-green: linear-gradient(135deg, #a855f7 0%, #c084fc 100%);
+    --gradient-hero: linear-gradient(135deg, #a855f7 0%, #c084fc 50%, #9333ea 100%);
+    --toon-shadow-hover: 6px 6px 0px rgba(168, 85, 247, 0.2);
+}
