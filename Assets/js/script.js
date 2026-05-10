@@ -163,22 +163,57 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollRaf = requestAnimationFrame(() => {
             scrollRaf = null;
             if (!carouselTrack || carouselCards.length === 0) return;
+            
             const trackRect = carouselTrack.getBoundingClientRect();
             const centerX = trackRect.left + trackRect.width / 2;
-            let closestIdx = 0;
-            let closestDist = Infinity;
-
+            
             carouselCards.forEach((card, i) => {
                 const rect = card.getBoundingClientRect();
                 const cardCenter = rect.left + rect.width / 2;
-                const dist = Math.abs(cardCenter - centerX);
-                if (dist < closestDist) {
-                    closestDist = dist;
-                    closestIdx = i;
+                const distanceFromCenter = cardCenter - centerX;
+                const normalizedDist = distanceFromCenter / (trackRect.width / 2);
+                
+                // Cover Flow Formula
+                const maxRotation = 45; // Degrees
+                const maxTranslateZ = -300; // Depth
+                const maxScale = 1.35;
+                const minScale = 0.75;
+                
+                let rotation = 0;
+                let translateZ = 0;
+                let scale = minScale;
+                let opacity = 0.4;
+                
+                const absDist = Math.abs(normalizedDist);
+                
+                if (absDist < 0.2) {
+                    // Center Card
+                    rotation = 0;
+                    translateZ = 0;
+                    scale = maxScale - (absDist * (maxScale - minScale) * 5);
+                    opacity = 1;
+                    card.classList.add('active');
+                } else {
+                    // Side Cards
+                    rotation = normalizedDist > 0 ? -maxRotation : maxRotation;
+                    translateZ = maxTranslateZ;
+                    scale = minScale;
+                    opacity = 0.3;
+                    card.classList.remove('active');
                 }
-            });
+                
+                // Add a bit of horizontal overlap
+                const translateX = normalizedDist * -100; 
 
-            setActiveCard(closestIdx);
+                card.style.transform = `
+                    translateX(${translateX}px) 
+                    translateZ(${translateZ}px) 
+                    rotateY(${rotation}deg) 
+                    scale(${scale})
+                `;
+                card.style.opacity = opacity;
+                card.style.zIndex = Math.round(100 - absDist * 100);
+            });
         });
     }
 
@@ -225,11 +260,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Horizontal mouse-wheel scroll (only with Shift key to avoid blocking normal page scroll)
+    // Horizontal mouse-wheel scroll logic
     if (carouselTrack) {
         carouselTrack.addEventListener('wheel', e => {
-            // Only hijack scroll when Shift is held, otherwise let page scroll normally
-            if (e.shiftKey && Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+            // If horizontal scroll is dominant, scroll track
+            if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+                e.preventDefault();
+                carouselTrack.scrollLeft += e.deltaX;
+            } else if (e.shiftKey) {
+                // If Shift is held, use vertical delta for horizontal scroll
                 e.preventDefault();
                 carouselTrack.scrollLeft += e.deltaY;
             }
@@ -251,7 +290,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize: center on first card after layout settles
     if (carouselCards.length > 0) {
-        setTimeout(() => scrollToCard(0), 200);
+        setTimeout(() => {
+            scrollToCard(0);
+            onTrackScroll(); // Force initial 3D calculation
+        }, 200);
     }
 
     /* ============================================================
