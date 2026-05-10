@@ -173,37 +173,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 const distanceFromCenter = cardCenter - centerX;
                 const normalizedDist = distanceFromCenter / (trackRect.width / 2);
                 
-                // Cover Flow Formula
-                const maxRotation = 45; // Degrees
-                const maxTranslateZ = -300; // Depth
-                const maxScale = 1.35;
-                const minScale = 0.75;
+                // Cover Flow Formula (Optimized for Landscape)
+                const maxRotation = 35; // Less rotation for wider cards
+                const maxTranslateZ = -250; // Slightly less depth
+                const maxScale = 1.45; // More dominant center card
+                const minScale = 0.85; 
                 
                 let rotation = 0;
                 let translateZ = 0;
                 let scale = minScale;
-                let opacity = 0.4;
+                let opacity = 0.5;
                 
                 const absDist = Math.abs(normalizedDist);
                 
-                if (absDist < 0.2) {
-                    // Center Card
+                if (absDist < 0.25) {
+                    // Center Card Focus
                     rotation = 0;
                     translateZ = 0;
-                    scale = maxScale - (absDist * (maxScale - minScale) * 5);
+                    scale = maxScale - (absDist * (maxScale - minScale) * 4);
                     opacity = 1;
                     card.classList.add('active');
                 } else {
-                    // Side Cards
+                    // Side Cards Receding
                     rotation = normalizedDist > 0 ? -maxRotation : maxRotation;
                     translateZ = maxTranslateZ;
                     scale = minScale;
-                    opacity = 0.3;
+                    opacity = 0.4;
                     card.classList.remove('active');
                 }
                 
-                // Add a bit of horizontal overlap
-                const translateX = normalizedDist * -100; 
+                // Adjust horizontal separation for wider cards
+                const translateX = normalizedDist * -140; 
 
                 card.style.transform = `
                     translateX(${translateX}px) 
