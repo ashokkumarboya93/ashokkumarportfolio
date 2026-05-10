@@ -84,6 +84,18 @@ body {
     overflow-x: hidden;
 }
 
+/* Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: var(--gradient-green);
+    z-index: 2000;
+    transition: width 0.1s ease-out;
+}
+
 /* ============================================
    ANIMATED BACKGROUND ELEMENTS
    ============================================ */
@@ -637,7 +649,12 @@ a.logo:hover .logo-text {
     padding: 5px;
     box-shadow: 0 0 0 6px var(--bg-white), var(--neon-green-strong);
     z-index: 3;
-    animation: floatProfile 6s ease-in-out infinite;
+    animation: floatProfile 6s ease-in-out infinite, heroPulse 4s ease-in-out infinite;
+}
+
+@keyframes heroPulse {
+    0%, 100% { box-shadow: 0 0 0 6px var(--bg-white), var(--neon-green-strong); }
+    50% { box-shadow: 0 0 0 12px var(--bg-white), 0 0 40px var(--green-primary); }
 }
 
 .profile-photo {
@@ -2888,13 +2905,19 @@ a.info-value:hover {
    ============================================ */
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    transform: translateY(40px) scale(0.95) rotateX(10deg);
+    filter: blur(8px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: center bottom;
+    will-change: transform, opacity, filter;
 }
 
 .reveal.revealed {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1) rotateX(0deg);
+    filter: blur(0);
 }
 
 .reveal:nth-child(1) {

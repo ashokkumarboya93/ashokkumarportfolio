@@ -461,7 +461,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     if (typeof Lenis !== 'undefined') {
         const lenis = new Lenis({
-            lerp: 0.07, // Controls the buttery smoothness (lower is smoother/heavier)
+            lerp: 0.05, // Smoother and heavier
             wheelMultiplier: 1.0,
             smoothWheel: true,
             touchMultiplier: 2,
@@ -474,6 +474,38 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         requestAnimationFrame(raf);
+
+        // Parallax Effect for Background and Hero
+        const bgContainer = document.querySelector('.bg-shapes');
+        const heroVisual = document.querySelector('.hero-visual');
+        const scrollProgress = document.getElementById('scrollProgress');
+
+        lenis.on('scroll', (e) => {
+            const scrollY = e.scroll;
+            const scrollLimit = e.limit;
+            
+            // 1. Scroll Progress Bar
+            if (scrollProgress) {
+                const progress = (scrollY / scrollLimit) * 100;
+                scrollProgress.style.width = `${progress}%`;
+            }
+
+            // 2. Background Parallax
+            if (bgContainer) {
+                bgContainer.style.transform = `translateY(${scrollY * 0.15}px)`;
+            }
+
+            // 3. Hero Parallax
+            if (heroVisual) {
+                // Move hero visual slightly slower than scroll for depth
+                heroVisual.style.transform = `translateY(${scrollY * 0.1}px)`;
+            }
+
+            // 4. Subtle Skew on Scroll (Momentum effect)
+            // Optional: can add a slight skew to the whole body or sections
+            // const velocity = e.velocity * 0.01;
+            // document.body.style.transform = `skewY(${velocity}deg)`;
+        });
 
         // Connect anchor links to Lenis scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
