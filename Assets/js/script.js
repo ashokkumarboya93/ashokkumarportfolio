@@ -169,50 +169,29 @@ document.addEventListener('DOMContentLoaded', () => {
             
             carouselCards.forEach((card, i) => {
                 const rect = card.getBoundingClientRect();
-                const cardCenter = rect.left + rect.width / 2;
-                const distanceFromCenter = cardCenter - centerX;
-                const normalizedDist = distanceFromCenter / (trackRect.width / 2);
+                const cardCenter = rect.left + (rect.width / 2);
+
+                // Calculate how far the card is from the center of the screen
+                const distanceFromCenter = Math.abs(containerCenter - cardCenter);
+
+                // Calculate scale based on distance (from template)
+                let scale = 1 - (distanceFromCenter / window.innerWidth) * 0.8;
+                scale = Math.max(0.7, scale);
+
+                // Adjust opacity (from template)
+                let opacity = 1 - (distanceFromCenter / window.innerWidth) * 0.5;
+                opacity = Math.max(0.4, opacity);
+
+                // Apply the scale and z-index
+                card.style.transform = `scale(${scale})`;
+                card.style.opacity = opacity;
+                card.style.zIndex = Math.round(scale * 100);
                 
-                // Cover Flow Formula (Optimized for Landscape)
-                const maxRotation = 35; // Less rotation for wider cards
-                const maxTranslateZ = -250; // Slightly less depth
-                const maxScale = 1.45; // More dominant center card
-                const minScale = 0.85; 
-                
-                let rotation = 0;
-                let translateZ = 0;
-                let scale = minScale;
-                let opacity = 0.5;
-                
-                const absDist = Math.abs(normalizedDist);
-                
-                if (absDist < 0.25) {
-                    // Center Card Focus
-                    rotation = 0;
-                    translateZ = 0;
-                    scale = maxScale - (absDist * (maxScale - minScale) * 4);
-                    opacity = 1;
+                if (scale > 0.95) {
                     card.classList.add('active');
                 } else {
-                    // Side Cards Receding
-                    rotation = normalizedDist > 0 ? -maxRotation : maxRotation;
-                    translateZ = maxTranslateZ;
-                    scale = minScale;
-                    opacity = 0.4;
                     card.classList.remove('active');
                 }
-                
-                // Adjust horizontal separation for wider cards
-                const translateX = normalizedDist * -140; 
-
-                card.style.transform = `
-                    translateX(${translateX}px) 
-                    translateZ(${translateZ}px) 
-                    rotateY(${rotation}deg) 
-                    scale(${scale})
-                `;
-                card.style.opacity = opacity;
-                card.style.zIndex = Math.round(100 - absDist * 100);
             });
         });
     }
