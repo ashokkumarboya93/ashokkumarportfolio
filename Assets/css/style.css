@@ -72,7 +72,7 @@
 }
 
 html {
-    
+
     scroll-padding-top: 80px;
 }
 
@@ -477,7 +477,7 @@ a.logo:hover .logo-text {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding-top: 80px;
+    padding-top: 60px;
     background: var(--bg-white);
     position: relative;
     overflow: hidden;
@@ -506,18 +506,18 @@ a.logo:hover .logo-text {
 .hero-badge {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     padding: 8px 20px;
     background: var(--green-light);
     border: 2px solid rgba(74, 222, 128, 0.4);
     border-radius: var(--radius-full);
     font-size: 1.1rem;
     color: var(--green-dark);
-    font-weight: 600;
-    margin-bottom: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
     animation: fadeInDown 0.8s ease-out;
     box-shadow: var(--toon-shadow);
-    margin-top: 20px;
+    margin-top: 17px;
 }
 
 .badge-dot {
@@ -544,20 +544,20 @@ a.logo:hover .logo-text {
 
 .hero-title {
     font-family: var(--font-primary);
-    font-size: 3.6rem;
+    font-size: 3.2rem;
     font-weight: 700;
     line-height: 1.1;
     color: var(--text-dark);
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     animation: fadeInUp 0.8s ease-out 0.1s both;
 }
 
 .hero-description {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--text-secondary);
-    line-height: 1.8;
-    margin-bottom: 32px;
-    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    max-width: 500px;
     animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
@@ -583,8 +583,8 @@ a.logo:hover .logo-text {
 .hero-stats {
     display: flex;
     align-items: center;
-    gap: 32px;
-    margin-bottom: 32px;
+    gap: 24px;
+    margin-bottom: 24px;
     animation: fadeInUp 0.8s ease-out 0.3s both;
 }
 
@@ -632,8 +632,8 @@ a.logo:hover .logo-text {
 
 .visual-container {
     position: relative;
-    width: 420px;
-    height: 420px;
+    width: 380px;
+    height: 380px;
 }
 
 /* Profile Photo */
@@ -642,8 +642,8 @@ a.logo:hover .logo-text {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     background: var(--gradient-green);
     padding: 5px;
@@ -653,8 +653,15 @@ a.logo:hover .logo-text {
 }
 
 @keyframes heroPulse {
-    0%, 100% { box-shadow: 0 0 0 6px var(--bg-white), var(--neon-green-strong); }
-    50% { box-shadow: 0 0 0 12px var(--bg-white), 0 0 40px var(--green-primary); }
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 6px var(--bg-white), var(--neon-green-strong);
+    }
+
+    50% {
+        box-shadow: 0 0 0 12px var(--bg-white), 0 0 40px var(--green-primary);
+    }
 }
 
 .profile-photo {
@@ -1948,7 +1955,7 @@ a.logo:hover .logo-text {
     gap: 20px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    
+
     padding: 40px calc(50% - 190px) 50px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -2872,9 +2879,9 @@ a.info-value:hover {
     opacity: 0;
     transform: translateY(40px) scale(0.95) rotateX(10deg);
     filter: blur(8px);
-    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-                filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
     transform-origin: center bottom;
     will-change: transform, opacity, filter;
 }
@@ -3626,26 +3633,28 @@ body.theme-purple {
     --nav-bg-color: rgba(255, 255, 255, 0.12);
     --nav-bg-scrolled: rgba(255, 255, 255, 0.95);
 }
+
 /* ============================================
    3D TYPING ANIMATION TEXT
    ============================================ */
 .role-typing-text {
     font-family: var(--font-primary);
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 800;
     color: var(--green-primary);
-    text-align: center;
-    margin-top: 15px;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 20px;
     letter-spacing: 1.5px;
     /* 3D text effect */
-    text-shadow: 
+    text-shadow:
         1px 1px 0px var(--bg-dark),
         2px 2px 0px var(--bg-dark),
         3px 3px 0px var(--bg-dark),
         4px 4px 5px rgba(0, 0, 0, 0.3);
     min-height: 28px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     white-space: nowrap;
     z-index: 10;
@@ -3659,8 +3668,15 @@ body.theme-purple {
 }
 
 @keyframes typingBlink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
 @media (max-width: 768px) {
@@ -3671,22 +3687,23 @@ body.theme-purple {
 
 
 /* Lenis Recommended CSS */
-html.lenis, html.lenis body {
-  height: auto;
+html.lenis,
+html.lenis body {
+    height: auto;
 }
 
 .lenis.lenis-smooth {
-  scroll-behavior: auto !important;
+    scroll-behavior: auto !important;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
+    overscroll-behavior: contain;
 }
 
 .lenis.lenis-stopped {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .lenis.lenis-scrolling iframe {
-  pointer-events: none;
+    pointer-events: none;
 }
