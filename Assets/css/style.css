@@ -1020,9 +1020,10 @@ a.logo:hover .logo-text {
         box-shadow: 0 2px 8px rgba(74, 222, 128, 0.3);
     }
 
-    color: var(--text-secondary);
-    margin-bottom: 18px;
-    font-size: 0.98rem;
+    50% {
+        opacity: 1;
+        box-shadow: 0 4px 16px rgba(74, 222, 128, 0.6);
+    }
 }
 
 .about-intro {
@@ -3069,7 +3070,7 @@ a.info-value:hover {
     }
 
     .profile-photo-wrap {
-        width: 250px;
+        width: 180px;
         height: 180px;
     }
 
@@ -3136,6 +3137,14 @@ a.info-value:hover {
     .profile-photo-wrap {
         width: 160px;
         height: 160px;
+    }
+
+    .project-robot-wrapper {
+        position: relative;
+        right: auto;
+        top: auto;
+        margin: 20px auto 0;
+        align-items: center;
     }
 }
 
