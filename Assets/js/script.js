@@ -182,8 +182,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    let scrollVelocity = 0;
+    let lastScrollLeft = 0;
+    
     if (carouselTrack) {
-        carouselTrack.addEventListener('scroll', onTrackScroll, { passive: true });
+        carouselTrack.addEventListener('scroll', () => {
+            const currentScrollLeft = carouselTrack.scrollLeft;
+            scrollVelocity = currentScrollLeft - lastScrollLeft;
+            lastScrollLeft = currentScrollLeft;
+            
+            // Apply slight skew to track based on velocity for horizontal motion feel
+            const skew = Math.max(-5, Math.min(5, scrollVelocity * 0.08));
+            carouselTrack.style.transform = `skewX(${skew}deg)`;
+            
+            onTrackScroll();
+            
+            // Reset skew after a delay
+            clearTimeout(carouselTrack.skewTimeout);
+            carouselTrack.skewTimeout = setTimeout(() => {
+                carouselTrack.style.transform = 'skewX(0deg)';
+            }, 100);
+        }, { passive: true });
     }
 
     // Prev / Next buttons
@@ -461,10 +480,10 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     if (typeof Lenis !== 'undefined') {
         const lenis = new Lenis({
-            lerp: 0.05, // Smoother and heavier
-            wheelMultiplier: 1.0,
+            lerp: 0.07, // Even smoother and heavier for that premium feel
+            wheelMultiplier: 1.1,
             smoothWheel: true,
-            touchMultiplier: 2,
+            touchMultiplier: 2.2,
             infinite: false,
         });
 
