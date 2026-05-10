@@ -156,67 +156,49 @@ document.addEventListener('DOMContentLoaded', () => {
         currentIndex = idx;
     }
 
-    // On scroll, detect nearest-to-center card
-    let scrollRaf = null;
-    function onTrackScroll() {
-        if (scrollRaf) return;
-        scrollRaf = requestAnimationFrame(() => {
-            scrollRaf = null;
-            if (!carouselTrack || carouselCards.length === 0) return;
+    // On scroll, calculate dynamic 3D scale and focus
+    function updateCarouselAnimation() {
+        if (!carouselTrack || carouselCards.length === 0) return;
+        
+        const trackRect = carouselTrack.getBoundingClientRect();
+        const centerX = trackRect.left + trackRect.width / 2;
+        let closestIdx = 0;
+        let closestDist = Infinity;
+
+        carouselCards.forEach((card, i) => {
+            const rect = card.getBoundingClientRect();
+            const cardCenter = rect.left + rect.width / 2;
+            const distFromCenter = Math.abs(centerX - cardCenter);
             
-            const trackRect = carouselTrack.getBoundingClientRect();
-            const centerX = trackRect.left + trackRect.width / 2;
+            // Calculate scale: base 0.85, center up to 1.1
+            // Max distance for calculation is roughly the track width
+            const maxDist = trackRect.width / 2;
+            const normalizedDist = Math.min(distFromCenter / maxDist, 1);
             
-            carouselCards.forEach((card, i) => {
-                const rect = card.getBoundingClientRect();
-                const cardCenter = rect.left + (rect.width / 2);
+            // Focus properties
+            const scale = 1.1 - (normalizedDist * 0.25); // 1.1 down to 0.85
+            const opacity = 1 - (normalizedDist * 0.5);   // 1.0 down to 0.5
+            const blur = normalizedDist * 2;             // 0px up to 2px blur
+            
+            // Apply transformations
+            card.style.transform = `scale(${scale})`;
+            card.style.opacity = opacity;
+            card.style.filter = `blur(${blur}px)`;
+            card.style.zIndex = Math.round((1 - normalizedDist) * 10);
 
-                // Calculate how far the card is from the center of the screen
-                const distanceFromCenter = Math.abs(containerCenter - cardCenter);
-
-                // Calculate scale based on distance (from template)
-                let scale = 1 - (distanceFromCenter / window.innerWidth) * 0.8;
-                scale = Math.max(0.7, scale);
-
-                // Adjust opacity (from template)
-                let opacity = 1 - (distanceFromCenter / window.innerWidth) * 0.5;
-                opacity = Math.max(0.4, opacity);
-
-                // Apply the scale and z-index
-                card.style.transform = `scale(${scale})`;
-                card.style.opacity = opacity;
-                card.style.zIndex = Math.round(scale * 100);
-                
-                if (scale > 0.95) {
-                    card.classList.add('active');
-                } else {
-                    card.classList.remove('active');
-                }
-            });
+            // Check for active (nearest) card
+            if (distFromCenter < closestDist) {
+                closestDist = distFromCenter;
+                closestIdx = i;
+            }
         });
+
+        setActiveCard(closestIdx);
     }
 
-    let scrollVelocity = 0;
-    let lastScrollLeft = 0;
-    
     if (carouselTrack) {
-        carouselTrack.addEventListener('scroll', () => {
-            const currentScrollLeft = carouselTrack.scrollLeft;
-            scrollVelocity = currentScrollLeft - lastScrollLeft;
-            lastScrollLeft = currentScrollLeft;
-            
-            // Apply slight skew to track based on velocity for horizontal motion feel
-            const skew = Math.max(-5, Math.min(5, scrollVelocity * 0.08));
-            carouselTrack.style.transform = `skewX(${skew}deg)`;
-            
-            onTrackScroll();
-            
-            // Reset skew after a delay
-            clearTimeout(carouselTrack.skewTimeout);
-            carouselTrack.skewTimeout = setTimeout(() => {
-                carouselTrack.style.transform = 'skewX(0deg)';
-            }, 100);
-        }, { passive: true });
+        carouselTrack.addEventListener('scroll', updateCarouselAnimation, { passive: true });
+        window.addEventListener('resize', updateCarouselAnimation);
     }
 
     // Prev / Next buttons
@@ -239,15 +221,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Horizontal mouse-wheel scroll logic
+    // Horizontal mouse-wheel scroll (only with Shift key to avoid blocking normal page scroll)
     if (carouselTrack) {
         carouselTrack.addEventListener('wheel', e => {
-            // If horizontal scroll is dominant, scroll track
-            if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-                e.preventDefault();
-                carouselTrack.scrollLeft += e.deltaX;
-            } else if (e.shiftKey) {
-                // If Shift is held, use vertical delta for horizontal scroll
+            // Only hijack scroll when Shift is held, otherwise let page scroll normally
+            if (e.shiftKey && Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
                 e.preventDefault();
                 carouselTrack.scrollLeft += e.deltaY;
             }
@@ -271,8 +249,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (carouselCards.length > 0) {
         setTimeout(() => {
             scrollToCard(0);
-            onTrackScroll(); // Force initial 3D calculation
-        }, 200);
+            updateCarouselAnimation();
+        }, 300);
     }
 
     /* ============================================================
@@ -501,10 +479,10 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     if (typeof Lenis !== 'undefined') {
         const lenis = new Lenis({
-            lerp: 0.07, // Even smoother and heavier for that premium feel
-            wheelMultiplier: 1.1,
+            lerp: 0.05, // Smoother and heavier
+            wheelMultiplier: 1.0,
             smoothWheel: true,
-            touchMultiplier: 2.2,
+            touchMultiplier: 2,
             infinite: false,
         });
 

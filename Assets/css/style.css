@@ -1939,72 +1939,107 @@ a.logo:hover .logo-text {
     position: relative;
     padding: 20px 0 40px;
     overflow: hidden;
+    perspective: 1200px;
 }
 
 /* --- Carousel Track --- */
-/* --- Carousel Track --- */
 .carousel-track {
     display: flex;
-    align-items: center;
-    gap: 30px;
-    padding: 0 calc(50vw - 175px);
+    gap: 20px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    
+    padding: 40px calc(50% - 190px) 50px;
+    -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    -ms-overflow-style: none;
-    perspective: 1000px;
+    align-items: center;
 }
 
 .carousel-track::-webkit-scrollbar {
     display: none;
 }
 
+/* --- Carousel Card --- */
 .carousel-card {
-    width: 350px;
-    height: 250px;
-    background: #fff;
-    border-radius: 12px;
+    width: 380px;
+    min-width: 380px;
+    max-width: 380px;
     flex-shrink: 0;
     scroll-snap-align: center;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px;
-    transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+    background: var(--bg-white);
+    border: 2.5px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transform-origin: center center;
+    will-change: transform, opacity;
     cursor: pointer;
+    /* Initial state before JS takes over */
+    transform: scale(0.85);
+    opacity: 0.5;
 }
 
 .carousel-card.active {
-    z-index: 50;
+    opacity: 1;
+    filter: blur(0);
+    box-shadow: var(--toon-shadow), 0 12px 40px rgba(15, 60, 30, 0.15);
+    border-color: var(--green-dark);
 }
 
+.carousel-card:not(.active):hover {
+    opacity: 0.7;
+    filter: blur(0.5px);
+}
+
+/* Card body always visible */
+.carousel-card-body {
+    padding: 24px;
+}
+
+/* --- Project Card Image --- */
 .carousel-card-img {
     width: 100%;
-    height: 160px;
-    border-radius: 8px;
+    height: 180px;
     overflow: hidden;
     position: relative;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
 }
 
 .carousel-card-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.carousel-card-body {
-    padding: 0;
-    margin-top: 10px;
-    border-top: 2px solid #eee;
-    padding-top: 10px;
+.carousel-card:hover .carousel-card-img img {
+    transform: scale(1.1);
 }
 
-.project-card-title {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #333;
+.carousel-card-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.4));
+    pointer-events: none;
+}
+
+
+
+/* --- Card Body --- */
+
+.project-badge {
+    display: inline-block;
+    padding: 5px 16px;
+    background: var(--bg-dark);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--green-primary);
+    margin-bottom: 12px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
 }
 
 .cloud-badge {
@@ -3654,98 +3689,4 @@ html.lenis, html.lenis body {
 
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
-}
-
-/* ============================================================
-   PROJECT DETAIL ENHANCEMENTS
-   ============================================================ */
-.detail-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 50px;
-    align-items: start;
-}
-
-.visual-card {
-    background: var(--bg-white);
-    border: 3px solid var(--bg-dark);
-    border-radius: var(--radius-xl);
-    padding: 15px;
-    box-shadow: 10px 10px 0 var(--bg-dark);
-    transform: rotate(2deg);
-    transition: transform 0.3s ease;
-}
-
-.visual-card:hover {
-    transform: rotate(0deg) scale(1.02);
-}
-
-.detail-img {
-    width: 100%;
-    border-radius: var(--radius-lg);
-    border: 2px solid var(--bg-dark);
-    margin-bottom: 10px;
-}
-
-.img-caption {
-    text-align: center;
-    font-weight: 700;
-    color: var(--text-dark);
-    font-size: 0.9rem;
-}
-
-.project-gallery {
-    padding: 80px 0;
-    background: rgba(0, 0, 0, 0.02);
-}
-
-.gallery-container {
-    position: relative;
-    border-radius: var(--radius-2xl);
-    overflow: hidden;
-    border: 4px solid var(--bg-dark);
-    box-shadow: var(--toon-shadow-lg);
-    margin-top: 40px;
-}
-
-.gallery-img {
-    width: 100%;
-    display: block;
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.gallery-container:hover .gallery-img {
-    transform: scale(1.05);
-}
-
-.gallery-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 40px;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-    color: #fff;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.gallery-container:hover .gallery-overlay {
-    opacity: 1;
-}
-
-.gallery-overlay p {
-    font-size: 1.2rem;
-    font-weight: 600;
-    max-width: 800px;
-}
-
-@media (max-width: 992px) {
-    .detail-grid {
-        grid-template-columns: 1fr;
-    }
-    .visual-card {
-        transform: none;
-        margin-top: 40px;
-    }
 }
